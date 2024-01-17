@@ -6,6 +6,7 @@ import { useFavorite } from "@/hooks/useFavorite";
 import { useEffect, useState } from "react";
 import { Product } from "@/types/Product";
 import { Rating } from "@mui/material";
+
 const InfoProduct = () => {
     const pathname: string | null = usePathname();
     const id: number | null = pathname !== null ? parseInt(pathname.split('/').pop() || '', 10) || null : null;

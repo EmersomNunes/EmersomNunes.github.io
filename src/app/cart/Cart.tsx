@@ -4,6 +4,10 @@ import Link from "next/link";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useState } from "react";
 import { MdCheckCircle } from "react-icons/md";
+import { formatNumber } from "@/utils/formatNumber";
+
+
+const discont = 1 - 0.03;
 
 export const Cart = () => {
   const { cartProducts, handleDeleteProductCart } = useCart();
@@ -25,22 +29,15 @@ export const Cart = () => {
 
   const calculateSubtotal = () => {
     return (cartProducts || []).reduce((subtotal, item) => {
-      const quantity = productQuantities[item.id] || 1;
+      const quantity = productQuantities[item.id] * discont  || 1;
       return subtotal + item.price * quantity;
     }, 0);
   };
+  
+  formatNumber(calculateSubtotal);
 
   const subtotal = calculateSubtotal();
 
-  const subtotalFormated = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(subtotal);
-
-  new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(calculateSubtotal())
 
   if (!cartProducts || cartProducts.length === 0) {
     return (
@@ -97,10 +94,8 @@ export const Cart = () => {
               </div>
               <span
                 className="hidden lg:block left-[30%] top-[48%] lg:relative lg:top-auto lg:left-auto font-bold text-xl w-48 text-end">
-                {new Intl.NumberFormat('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL'
-                }).format(item.price * productQuantities[item.id] || item.price)}
+                {formatNumber(item.price < 200 ? item.price * productQuantities[item.id] || item.price :
+                   item.price * discont * productQuantities[item.id] || item.price)}
                 <div className="hidden lg:flex text-base text-gray-600 font-normal mt-5">
                   à vista no Pix e boleto ou em até 6x de {`${(item?.price as number  / 6 * productQuantities[item.id] || item.price / 6).toFixed(2).replace(".", ",")}`} sem juros
                 </div>
@@ -115,7 +110,7 @@ export const Cart = () => {
                       </span>
                       <span className="text-gray-800 text-xl">
                         Subtotal: ({cartProducts?.length} Produtos):
-                        <span className="font-bold text-black"> {subtotalFormated}</span>
+                        <span className="font-bold text-black"> {formatNumber(subtotal)}</span>
                       </span>
                       <button
                         className="border-2 text-white bg-purple-600 rounded-xl p-2 cursor-pointer w-screen lg:w-[50%]">
@@ -125,7 +120,7 @@ export const Cart = () => {
                     </> : <>
                       <span className="text-gray-800 text-xl">
                         Subtotal: ({cartProducts?.length} Produtos):
-                        <span className="font-bold text-black"> {subtotalFormated}</span>
+                        <span className="font-bold text-black"> {formatNumber(subtotal)}</span>
                       </span>
                       <button
                         className="border-2 text-white bg-purple-600 rounded-xl p-2 cursor-pointer w-[50%] hover:opacity-60">
