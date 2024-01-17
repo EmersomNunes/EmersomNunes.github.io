@@ -12,10 +12,16 @@ const ButtonAddToCart = () => {
 
     const { handleAddProductCart } = useCart();
 
+    const handleAddToCart = () => {
+        if (item) {
+            handleAddProductCart(item)
+        }
+    }
+
     return (
         <div className='mt-10 flex justify-center'>
             <button
-                onClick={() => item && handleAddProductCart(item)}
+                onClick={handleAddToCart}
                 className='bg-purple-600 p-3 px-12 rounded-2xl text-white text-2xl flex flex-col font-bold hover:opacity-90'>
                 <span className="flex gap-2"><BsCartPlus />COMPRAR</span>
                 <p className='text-sm font-normal'>COLOCAR NO CARRINHO</p>

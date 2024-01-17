@@ -10,22 +10,6 @@ export const CartShop = () => {
 
     cartQt = cartProducts?.length as number;
 
-    const [userData, setUserData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/api/users'); // Substitua pela rota correta
-        const data = await response.json();
-        setUserData(data.user);
-      } catch (error) {
-        console.error('Erro ao obter dados do usuário:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
     useEffect(() => {
         setCartTotal(cartQt)
     }, [cartQt])

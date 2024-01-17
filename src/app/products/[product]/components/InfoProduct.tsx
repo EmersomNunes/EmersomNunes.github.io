@@ -11,7 +11,7 @@ const InfoProduct = () => {
     const id: number | null = pathname !== null ? parseInt(pathname.split('/').pop() || '', 10) || null : null;
     const item = id !== null ? getItemById(id) : null;
 
-    const { toggleProductFavorite } = useFavorite();
+    const { toggleProductFavorite, handleAddProductFavorite } = useFavorite();
     const [isFavoriteProduct, setIsFavoriteProduct] = useState(false);
     const [favoriteProduct, setFavoriteProduct] = useState<Product>({
         id: item?.id as number,
@@ -24,7 +24,6 @@ const InfoProduct = () => {
     });
 
     useEffect(() => {
-        // Recupere o estado do localStorage ao montar o componente
         const storedFavorite = localStorage.getItem('favoriteProduct');
         if (storedFavorite) {
             setIsFavoriteProduct(true);
@@ -35,7 +34,6 @@ const InfoProduct = () => {
         toggleProductFavorite(favoriteProduct);
         setIsFavoriteProduct((prev) => !prev);
 
-        // Atualize o localStorage ao alterar o estado
         if (!isFavoriteProduct) {
             localStorage.setItem('favoriteProduct', JSON.stringify(favoriteProduct));
         } else {
@@ -46,18 +44,20 @@ const InfoProduct = () => {
     return (
         <div>
             <div className=''>
-                <div className="flex p-16 gap-10">
-                    <img src={item?.image} className="w-72 h-96 rounded-md" />
-                    <div className="mt-5 w-[28rem]">
+                <div className="p-3 lg:flex lg:p-12 lg:gap-10">
+                    <div className="flex justify-center">
+                        <img src={item?.image} className="lg:w-80 lg:h-[25rem] w-52 rounded-md object-contain" />
+                    </div>
+                    <div className="lg:mt-10 lg:w-[28rem]">
                         <div className="font-semibold text-xl text-gray-600">{item?.name}</div>
-                        <Rating value={3} className="mt-2"/>
-                        <span className="absolute ml-80 top-[265px]">
+                        <Rating value={3} className="mt-2" />
+                        <span className="absolute top-[18%] ml-36 lg:ml-72 lg:top-[265px]">
                             <Heart
                                 isClick={!isFavoriteProduct}
-                                onClick={handleToggleFavorite}
+                                onClick={handleToggleFavorite}  
                             />
                         </span>
-                        <p className="hidden lg:block mt-2">{item?.description} <span className="underline ml-2">ver mais</span></p>
+                        <p className="hidden lg:block mt-2">{item?.description} <span className="underline ml-2 cursor-pointer">ver mais</span></p>
                     </div>
                 </div>
             </div>

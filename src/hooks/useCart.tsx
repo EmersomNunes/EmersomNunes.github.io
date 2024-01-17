@@ -37,15 +37,15 @@ export const CartContextProvider = (props: Props) => {
           router.push("/cart")
           return prev;
         }
-  
+        
         const updatedCart = [...prev, product];
         localStorage.setItem("eShopCartItens", JSON.stringify(updatedCart));
-        toast.success("Produto adicionado ao carrinho");
+        router.push("/cart")
         return updatedCart;
       } else {
         const updatedCart = [product];
         localStorage.setItem("eShopCartItens", JSON.stringify(updatedCart));
-        toast.success("Produto adicionado ao carrinho");
+        router.push("/cart")
         return updatedCart;
       }
     });
