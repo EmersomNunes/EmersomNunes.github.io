@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -13,8 +13,28 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+
+      display: ["group-hover"],
+
+      fontFamily: {
+        'DM-mono': 'DM Mono, monospace'
+      },
+      colors: {
+        'salmon': '#E7C192',
+        'transparent': 'rgb(0,0,0,0)',
+        'half-transparent': 'rgb(202, 138, 4,0.7)',
+        'blackburguer': 'rgb(0,0,0,0.8)',
+        'blackHoverburguer': 'rgb(0,0,0,0.8)',
+        "backgroundPage": 'rgb(255,255,255,0.5)'
+      },
+      transitionProperty: {
+        'width': 'width'
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio"),
+  ]
+
+
 }
 export default config
