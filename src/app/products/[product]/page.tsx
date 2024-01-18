@@ -6,6 +6,7 @@ import PaymentForm from './components/payment/paymentForm'
 import Carousel from './components/carouselYouMightLike/Carousel'
 import CarouselOtherPeolplesBuyThis from './components/carouselYouMightLike/CarouselOtherPeoplesBuyThis';
 import AccordionDatasheet from './components/accordion/AccordionDatasheet'
+import Assessments from './components/rating/Assessments'
 
 const page = () => {
     return (
@@ -20,6 +21,7 @@ const page = () => {
                     <Carousel />
                     <CarouselOtherPeolplesBuyThis />
                     <AccordionDatasheet />
+                    <Assessments />
                 </div>
                 
             </div>

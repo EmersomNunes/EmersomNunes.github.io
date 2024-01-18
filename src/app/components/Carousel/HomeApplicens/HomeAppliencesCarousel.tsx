@@ -67,7 +67,10 @@ const HomeAppliencesCarousel = () => {
         <h2 className="md:flex lg:flex text-start mb-8 text-2xl font-bold">Eletrodomésticos</h2>
         <Slider {...settings}>
           {products.filter(item => item.carouselCategory === "HomeAppliences").map(item => (
-            <Link key={item.id} href={`/products/${item.id}`} className="rounded-2xl text-center cursor-pointer translate hover:scale-95">
+            <Link
+              key={item.id} href={`/products/${item.id}`}
+              className="rounded-2xl text-center cursor-pointer translate hover:scale-95">
+
               <img src={item.image} className="h-36 lg:h-56 lg:mt-4 mx-auto lg:w-[200px] rounded-md object-contain" />
               <p className="mt-3 lg:mt-10 mb-3 truncate">{item.name}</p>
               <Rating value={calculateAverageRating(item.id)} />
@@ -86,10 +89,12 @@ const HomeAppliencesCarousel = () => {
                   </a>
                 </>}
               </span>
-              <p className="mt-3 lg:text-lg font-extrabold">{new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-              }).format(parseInt(item.price as any))}</p>
+              <p
+                className="mt-3 lg:text-lg font-extrabold">{new Intl.NumberFormat('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL'
+                }).format(parseInt(item.price as any))}
+              </p>
             </Link>
           ))}
         </Slider>

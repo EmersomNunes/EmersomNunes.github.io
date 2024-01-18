@@ -7,13 +7,11 @@ import PromotionHomeApplicens from "@/app/components/Carousel/HomeApplicens/Prom
 import ChirstmasOffers from "@/app/components/Carousel/ChristmasOffers";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
-import { NavSprite } from "./components/maintop2/navSprite";
 
 const Page = () => {
   return (
     <div className="">
       <Header />
-      <NavSprite />
       <hr className="sm:block h-[1px] bg-gray-200 border-0 dark:bg-yellow-700"></hr>
       <div>
         <Carousel />

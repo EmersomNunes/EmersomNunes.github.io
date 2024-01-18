@@ -6,11 +6,13 @@ import { useFavorite } from "@/hooks/useFavorite";
 import { useEffect, useState } from "react";
 import { Product } from "@/types/Product";
 import { Rating } from "@mui/material";
+import { useRating } from "@/hooks/useRating";
 
 const InfoProduct = () => {
     const pathname: string | null = usePathname();
     const id: number | null = pathname !== null ? parseInt(pathname.split('/').pop() || '', 10) || null : null;
     const item = id !== null ? getItemById(id) : null;
+    const { calculateAverageRating, handleRatingCarousel } = useRating()
 
     const { toggleProductFavorite, handleAddProductFavorite } = useFavorite();
     const [isFavoriteProduct, setIsFavoriteProduct] = useState(false);
@@ -51,11 +53,26 @@ const InfoProduct = () => {
                     </div>
                     <div className="lg:mt-10 lg:w-[28rem]">
                         <div className="font-semibold text-xl text-gray-600">{item?.name}</div>
-                        <Rating value={3} className="mt-2" />
+                        <Rating value={calculateAverageRating(item?.id as number)} className="mt-2" />
+                        <span className="absolute mt-2 ml-2">
+                            {(!handleRatingCarousel(item?.id as number) || handleRatingCarousel(item?.id as number) <= 0) ? <>
+                                <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                                    {handleRatingCarousel(item?.id as number)} sem avaliações
+                                </a>
+                            </> : handleRatingCarousel(item?.id as number) === 1 ? <>
+                                <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                                    {handleRatingCarousel(item?.id as number)} avaliação
+                                </a>
+                            </> : <>
+                                <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                                    {handleRatingCarousel(item?.id as number)} avaliações
+                                </a>
+                            </>}
+                        </span>
                         <span className="absolute top-[18%] ml-36 lg:ml-72 lg:top-[265px]">
                             <Heart
                                 isClick={!isFavoriteProduct}
-                                onClick={handleToggleFavorite}  
+                                onClick={handleToggleFavorite}
                             />
                         </span>
                         <p className="hidden lg:block mt-2">{item?.description} <span className="underline ml-2 cursor-pointer">ver mais</span></p>

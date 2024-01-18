@@ -77,7 +77,7 @@ const NewsBooks = () => {
             <Link key={item.id} href={`/products/${item.id}`} className="cursor-pointer translate hover:scale-95">
               <img src={item.image} alt=""
                 className="h-36 lg:h-56 xl:mt-4 mx-auto xl:w-[200px] rounded-md object-contain" />
-              <p className="mt-3 lg:mt-10 lg:mb-3 truncate">{item.name}</p>
+              <p className="mt-3 lg:mt-10 lg:mb-3 truncate ml-8">{item.name}</p>
               <Rating value={calculateAverageRating(item.id)} />
               <span className="absolute">
                 {(!handleRatingCarousel(item.id) || handleRatingCarousel(item.id) <= 0) ? <>

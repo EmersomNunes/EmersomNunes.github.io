@@ -28,7 +28,6 @@ interface Props {
   [propName: string]: any
 };
 
-
 export const RatingContextProvider = (props: Props) => {
   const [activeItem, setActiveItem] = useState(null);
   const [textAreaValue, setTextAreaValue] = useState('');
