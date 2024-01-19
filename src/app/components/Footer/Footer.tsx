@@ -14,9 +14,9 @@ export const Footer = () => {
                     <a href="#" className="underline cursor-pointer text-sm">Trocas e devoluções</a>
                     <a href="#" className="underline cursor-pointer text-sm">Voltar ao inicio</a>
                 </div>
-                <span className="mx-auto flex justify-center mt-10 text-black font-bold">
+                <span className="mx-auto flex justify-center mt-10 text-black font-bold md:text-xl">
                     ATENÇÃO:
-                    <span className="text-white no-underline ml-1 text-sm md:text-base">Todas as imagens presentes neste site são de cunho educativo, não há intenção alguma de se realizar comércio.</span>
+                    <span className="text-white no-underline ml-1 text-sm md:text-xl">Todas as imagens presentes neste site são de cunho educativo, não há intenção alguma de se realizar comércio.</span>
                 </span>
             </div>
         </div>

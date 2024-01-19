@@ -61,7 +61,7 @@ const productAssessment = () => {
         }
     };
 
-    if (session) {
+    if (session?.user) {
         return (
             <div>
                 <Header />

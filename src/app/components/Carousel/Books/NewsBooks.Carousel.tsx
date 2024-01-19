@@ -29,7 +29,7 @@ const NewsBooks = () => {
   const { calculateAverageRating, handleRatingCarousel } = useRating();
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 4,

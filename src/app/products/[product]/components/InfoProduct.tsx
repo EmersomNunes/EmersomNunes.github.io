@@ -71,7 +71,7 @@ const InfoProduct = () => {
                         </span>
                         <span className="absolute top-[18%] ml-36 lg:ml-72 lg:top-[265px]">
                             <Heart
-                                isClick={!isFavoriteProduct}
+                                isClick={isFavoriteProduct}
                                 onClick={handleToggleFavorite}
                             />
                         </span>

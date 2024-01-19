@@ -5,6 +5,11 @@ import Link from "next/link";
 import { Rating } from "@mui/material";
 import { useRating } from "@/hooks/useRating";
 import { products } from "@/utils/products";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { getItemById } from "@/app/products/api";
+import { getRandomizedItemsCarousel } from "@/utils/getRandomItemsCarousel";
+import { Product } from "@/types/Product";
 
 const SamplePrevArrow = (props: any) => {
     const { className, onClick } = props;
@@ -26,6 +31,10 @@ const SampleNextArrow = (props: any) => {
 
 const Carousel: React.FC = () => {
     const { calculateAverageRating, handleRatingCarousel } = useRating();
+    const pathname: string | null = usePathname();
+    const id: number | null = pathname !== null ? parseInt(pathname.split('/').pop() || '', 10) || null : null;
+    const itemid = id !== null ? getItemById(id) : null;
+
 
     const settings = {
         dots: false,
@@ -63,7 +72,8 @@ const Carousel: React.FC = () => {
                     Talvez Você goste disso
                 </h2>
                 <Slider {...settings}>
-                    {products.filter((item) => item.category === "livros").map((item) => (
+                    {getRandomizedItemsCarousel(products.filter((item) => item.category === itemid?.category))
+                    .map((item: Product) => (
                         <Link key={item.id} href={`/products/${item.id}`}
                             className="cursor-pointer translate hover:scale-95 mt-5 lg:mt-0 mb-8 lg:mb-0">
 
@@ -72,7 +82,7 @@ const Carousel: React.FC = () => {
                             <div className="flex flex-col justify-center lg:block">
                                 <p className="mt-3 lg:mt-10 lg:mb-3 truncate w-96">{item.name}</p>
 
-                                <Rating value={calculateAverageRating(item.id)} className="flex justify-center lg:block"/>
+                                <Rating value={calculateAverageRating(item.id)} className="flex justify-center lg:block" />
 
                                 <span className="block">
                                     {(!handleRatingCarousel(item.id) || handleRatingCarousel(item.id) <= 0) ? <>

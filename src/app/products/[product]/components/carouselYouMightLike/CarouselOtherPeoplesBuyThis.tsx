@@ -5,6 +5,10 @@ import Link from "next/link";
 import { Rating } from "@mui/material";
 import { useRating } from "@/hooks/useRating";
 import { products } from "@/utils/products";
+import { usePathname } from "next/navigation";
+import { getItemById } from "@/app/products/api";
+import { Product } from "@/types/Product";
+import { getRandomizedItemsCarousel } from "@/utils/getRandomItemsCarousel";
 
 const SamplePrevArrow = (props: any) => {
     const { className, onClick } = props;
@@ -26,6 +30,9 @@ const SampleNextArrow = (props: any) => {
 
 const CarouselOtherPeolplesBuyThis: React.FC = () => {
     const { calculateAverageRating, handleRatingCarousel } = useRating();
+    const pathname: string | null = usePathname();
+    const id: number | null = pathname !== null ? parseInt(pathname.split('/').pop() || '', 10) || null : null;
+    const itemid = id !== null ? getItemById(id) : null;
 
     const settings = {
         dots: false,
@@ -63,41 +70,41 @@ const CarouselOtherPeolplesBuyThis: React.FC = () => {
                     Outras pessoas também compraram
                 </h2>
                 <Slider {...settings}>
-                    {products.filter((item) => item.category === "livros").map((item) => (
-                        <Link key={item.id} href={`/products/${item.id}`}
-                            className="cursor-pointer translate hover:scale-95 mt-5 lg:mt-0 mb-8 lg:mb-0">
+                    {getRandomizedItemsCarousel(products.filter((item) => item.category === itemid?.category))
+                        .map((item: Product) => (
+                            <Link key={item.id} href={`/products/${item.id}`}
+                                className="cursor-pointer translate hover:scale-95 mt-5 lg:mt-0 mb-8 lg:mb-0">
 
-                            <img src={item.image} className="h-36 lg:h-56 mx-auto rounded-md object-contain" />
+                                <img src={item.image} className="h-36 lg:h-56 mx-auto rounded-md object-contain" />
 
-                            <div className="flex flex-col justify-center lg:block">
-                                <p className="mt-3 lg:mt-10 lg:mb-3 truncate w-96">{item.name}</p>
+                                <div className="flex flex-col justify-center lg:block">
+                                    <p className="mt-3 lg:mt-10 lg:mb-3 truncate w-96">{item.name}</p>
 
-                                <Rating value={calculateAverageRating(item.id)} className="flex justify-center lg:block"/>
+                                    <Rating value={calculateAverageRating(item.id)} className="flex justify-center lg:block" />
 
-                                <span className="block">
-                                    {(!handleRatingCarousel(item.id) || handleRatingCarousel(item.id) <= 0) ? <>
-                                        <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
-                                            {handleRatingCarousel(item.id)} sem avaliações
-                                        </a>
-                                    </> : handleRatingCarousel(item.id) === 1 ? <>
-                                        <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
-                                            {handleRatingCarousel(item.id)} avaliação
-                                        </a>
-                                    </> : <>
-                                        <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
-                                            {handleRatingCarousel(item.id)} avaliações
-                                        </a>
-                                    </>}
-                                </span>
-                            </div>
-
-
-                            <p className="mt-3 lg:text-lg font-extrabold lg:mb-4">{new Intl.NumberFormat('pt-BR', {
-                                style: 'currency',
-                                currency: 'BRL'
-                            }).format(parseInt(item.price as any))}</p>
-                        </Link>
-                    ))}
+                                    <span className="block">
+                                        {(!handleRatingCarousel(item.id) || handleRatingCarousel(item.id) <= 0) ? <>
+                                            <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                                                {handleRatingCarousel(item.id)} sem avaliações
+                                            </a>
+                                        </> : handleRatingCarousel(item.id) === 1 ? <>
+                                            <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                                                {handleRatingCarousel(item.id)} avaliação
+                                            </a>
+                                        </> : <>
+                                            <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                                                {handleRatingCarousel(item.id)} avaliações
+                                            </a>
+                                        </>}
+                                    </span>
+                                </div>
+                                <p className="mt-3 lg:text-lg font-extrabold lg:mb-4">{new Intl.NumberFormat('pt-BR', {
+                                    style: 'currency',
+                                    currency: 'BRL'
+                                }).format(parseInt(item.price as any))}
+                                </p>
+                            </Link>
+                        ))}
                 </Slider>
             </div>
         </div>
