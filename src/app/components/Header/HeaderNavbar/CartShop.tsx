@@ -17,26 +17,88 @@ export const CartShop = () => {
     return (
         <div>
             {session ? <>
-                <Link href={`/cart`} className="cursor-pointer">
+                <Link
+                    href={`/cart`}
+                    className="
+                    cursor-pointer
+                    "
+                >
                     <img
                         src="https://cdn-icons-png.flaticon.com/128/34/34568.png"
                         title="Carrinho"
-                        className="w-6 absolute right-[8px] top-[12px]
-                            md:right-[25px] md:w-9
-                            xl:right-[110px]"
+                        className="w-6 
+                            absolute 
+                            right-[8px] 
+                            top-[12px]
+                            md:right-[25px] 
+                            md:w-9
+                            xl:right-[110px]
+                            "
                     />
-                    <span className="absolute text-sm right-[0px] top-[1.5px] lg:text-base lg:right-[105px] lg:top-[5px] bg-red-600 text-white h-5 w-5 rounded-full flex items-center justify-center">{cartTotal}</span>
+                    <span
+                        className="
+                            absolute 
+                            text-sm 
+                            right-[0px] 
+                            top-[1.5px] 
+                            lg:text-base 
+                            lg:right-[105px] 
+                            lg:top-[5px] 
+                            bg-red-600 
+                            text-white 
+                            h-5 
+                            w-5 
+                            rounded-full 
+                            flex 
+                            items-center 
+                            justify-center"
+                    >
+                        {cartTotal}
+                    </span>
                 </Link>
+
             </> : <>
-                <Link href={`/login`} className="cursor-pointer">
+
+                <Link
+                    href={`/login`}
+                    className="
+                        cursor-pointer
+                        "
+                >
                     <img
                         src="https://cdn-icons-png.flaticon.com/128/34/34568.png"
                         title="Carrinho"
-                        className="w-6 absolute right-[8px] top-[12px]
-                            md:right-[25px] md:w-9
-                            xl:right-[110px]"
+                        className="
+                            w-6 
+                            absolute 
+                            right-[8px] 
+                            top-[12px]
+                            md:right-[25px] 
+                            md:w-9
+                            xl:right-[110px]
+                            "
                     />
-                    <span className="absolute text-sm right-[0px] top-[1.5px] lg:text-base lg:right-[105px] lg:top-[5px] bg-red-600 text-white h-5 w-5 rounded-full flex items-center justify-center">{cartTotal}</span>
+                    <span
+                        className="
+                            absolute 
+                            text-sm 
+                            right-[0px] 
+                            top-[1.5px] 
+                            lg:text-base 
+                            lg:right-[105px] 
+                            lg:top-[5px] 
+                            bg-red-600 
+                            text-white 
+                            h-5 
+                            w-5 
+                            rounded-full 
+                            flex 
+                            items-center 
+                            justify-center
+                            "
+                    >
+                        {cartTotal}
+                    </span>
                 </Link>
             </>}
         </div>

@@ -5,7 +5,7 @@ export const PageCart = () => {
     return (
         <div>
             <Header />
-            <div className="">
+            <div>
                 <Cart />
             </div>
             <Footer />

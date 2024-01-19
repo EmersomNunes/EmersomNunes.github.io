@@ -12,11 +12,11 @@ const Page = () => {
   }); 
 
   if (status === "loading") {
-    return <div>Carregando...</div>;
+    return <div>Carregando...</div>
   }
 
   if (!session) {
-    return <div>{redirect}</div>;
+    return <div>{redirect("/login")}</div>
   }
 };
 
