@@ -5,11 +5,7 @@ export const UserIconSidebar = () => {
     return (
         <>
             {session ? <>
-            <button 
-                className="
-                    mb-5
-                    "
-            >
+            <button className="mb-5">
                 <img 
                     className="
                         text-sm 
@@ -18,8 +14,7 @@ export const UserIconSidebar = () => {
                         ml-5 
                         w-8 
                         h-8 
-                        rounded-full
-                        " 
+                        rounded-full" 
                     src={`${session.user?.image}`}
                 />
             </button>
@@ -34,8 +29,7 @@ export const UserIconSidebar = () => {
                         w-6 
                         absolute 
                         top-3 
-                        ml-5
-                        "
+                        ml-5"
                 />
             </button>      
             </>}

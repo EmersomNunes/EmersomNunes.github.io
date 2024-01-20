@@ -8,7 +8,7 @@ const Login = () => {
   const router = useRouter();
   return (
     <div>
-      {!session ?<>
+      {!session ? <>
         <div className="flex flex-col justify-center items-center">
           <EnterWithSocialMedia />
         </div>

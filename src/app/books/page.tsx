@@ -15,27 +15,13 @@ const page = () => {
     return (
         <div>
             <Header />
-            <div
-                className='
-                    my-10 
-                    mx-52'
-            >
+            <div className='my-10 mx-52'>
                 <h1
-                    className='
-                        text-3xl 
-                        text-gray-600 
-                        font-semibold 
-                        my-8'
-                >
+                    className='text-3x text-gray-600 font-semibold my-8'>
                     Todos os livros
                 </h1>
 
-                <div
-                    className='
-                        grid 
-                        grid-cols-3 
-                        gap-20'
-                >
+                <div className='grid grid-cols-3 gap-20'>
                     {products.filter((item) => item.category === "livros")
                         .map((item) => (
                             <Link
@@ -71,10 +57,7 @@ const page = () => {
                                     value={calculateAverageRating(item.id)}
                                 />
 
-                                <span
-                                    className="
-                                absolute"
-                                >
+                                <span className="absolute">
                                     {(!handleRatingCarousel(item.id) || handleRatingCarousel(item.id) <= 0)
                                         ? <>
                                             <a
@@ -91,6 +74,7 @@ const page = () => {
                                         </> :
 
                                         handleRatingCarousel(item.id) === 1 ?
+
                                             <>
                                                 <a
                                                     className='
@@ -102,6 +86,7 @@ const page = () => {
                                                 >
                                                     {handleRatingCarousel(item.id)} avaliação
                                                 </a>
+
                                             </> :
 
                                             <>
@@ -110,13 +95,8 @@ const page = () => {
                                                 </a>
                                             </>}
                                 </span>
-                                <p
-                                    className="
-                                        mt-3 
-                                        lg:text-lg 
-                                        font-extrabold 
-                                        lg:mb-4"
-                                >
+
+                                <p className="mt-3 lg:text-lg font-extrabold lg:mb-4">
                                     {new Intl.NumberFormat('pt-BR', {
                                         style: 'currency',
                                         currency: 'BRL'

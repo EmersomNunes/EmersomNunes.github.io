@@ -92,40 +92,20 @@ const NewsBooks = () => {
         text-center 
         mx-auto 
         overflow-hidden 
-        rounded-xl
-      "
+        rounded-xl"
     >
-      <div
-        className="
-          mx-auto 
-          p-8"
-      >
-        <h2
-          className="
-            md:flex 
-            lg:flex 
-            text-start 
-            mb-8 
-            text-2xl 
-            font-bold
-          "
-        >
+      <div className="mx-auto p-8">
+        <h2 className="md:flex lg:flex text-start mb-8 text-2xl font-bold">
           Lançamentos
         </h2>
 
-        <Slider
-          {...settings}
-        >
+        <Slider {...settings}>
           {products.filter(item => item.carouselCategory === "newBooks")
             .map(item => (
               <Link
                 key={item.id}
                 href={`/products/${item.id}`}
-                className="
-                  cursor-pointer 
-                  translate 
-                  hover:scale-95
-                "
+                className="cursor-pointer translate hover:scale-95"
               >
                 <img
                   src={item.image}
@@ -140,14 +120,8 @@ const NewsBooks = () => {
                     object-contain
                   "
                 />
-                <p
-                  className="
-                    mt-3 
-                    lg:mt-10 
-                    lg:mb-3 
-                    truncate 
-                    ml-8"
-                >
+                
+                <p className="mt-3 lg:mt-10 lg:mb-3 truncate ml-8">
                   {item.name}
                 </p>
 
@@ -155,22 +129,10 @@ const NewsBooks = () => {
                   value={calculateAverageRating(item.id)}
                 />
 
-                <span
-                  className="
-                    absolute
-                  "
-                >
+                <span className="absolute">
                   {(!handleRatingCarousel(item.id) || handleRatingCarousel(item.id) <= 0) ?
                     <>
-                      <a
-                        className="
-                          text-xs 
-                          ml-1 
-                          underline 
-                          text-sky-700 
-                          cursor-pointer
-                        "
-                      >
+                      <a className="text-xs ml-1 underline text-sky-700 cursor-pointer">
                         {handleRatingCarousel(item.id)} sem avaliações
                       </a>
                       
@@ -178,42 +140,19 @@ const NewsBooks = () => {
                     handleRatingCarousel(item.id) === 1 ?
 
                       <>
-                        <a 
-                          className='
-                            text-xs 
-                            ml-1 
-                            underline 
-                            text-sky-700 
-                            cursor-pointer
-                          '
-                        >
+                        <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
                           {handleRatingCarousel(item.id)} avaliação
                         </a>
                     </> :
                       <>
-                        <a 
-                          className='
-                            text-xs 
-                            ml-1 
-                            underline 
-                            text-sky-700 
-                            cursor-pointer
-                          '
-                        >
+                        <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
                           {handleRatingCarousel(item.id)} avaliações
                         </a>
                     </>
                   }
                 </span>
 
-                <p 
-                  className="
-                    mt-3 
-                    lg:text-lg 
-                    font-extrabold 
-                    lg:mb-4
-                  "
-                >
+                <p className="mt-3 lg:text-lg font-extrabold lg:mb-4">
                   {new Intl.NumberFormat('pt-BR', {
                   style: 'currency',
                   currency: 'BRL'

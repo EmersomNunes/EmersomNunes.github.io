@@ -19,9 +19,7 @@ export const CartShop = () => {
             {session ? <>
                 <Link
                     href={`/cart`}
-                    className="
-                    cursor-pointer
-                    "
+                    className="cursor-pointer"
                 >
                     <img
                         src="https://cdn-icons-png.flaticon.com/128/34/34568.png"
@@ -61,9 +59,7 @@ export const CartShop = () => {
 
                 <Link
                     href={`/login`}
-                    className="
-                        cursor-pointer
-                        "
+                    className="cursor-pointer"
                 >
                     <img
                         src="https://cdn-icons-png.flaticon.com/128/34/34568.png"
@@ -75,8 +71,7 @@ export const CartShop = () => {
                             top-[12px]
                             md:right-[25px] 
                             md:w-9
-                            xl:right-[110px]
-                            "
+                            xl:right-[110px]"
                     />
                     <span
                         className="
@@ -94,8 +89,7 @@ export const CartShop = () => {
                             rounded-full 
                             flex 
                             items-center 
-                            justify-center
-                            "
+                            justify-center"
                     >
                         {cartTotal}
                     </span>

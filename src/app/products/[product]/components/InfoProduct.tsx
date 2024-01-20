@@ -45,25 +45,37 @@ const InfoProduct = () => {
     };
 
     return (
-        <div>
-            <div className=''>
+            <div>
                 <div className="p-3 lg:flex lg:p-12 lg:gap-10">
                     <div className="flex justify-center">
-                        <img src={item?.image} className="lg:w-80 lg:h-[25rem] w-52 rounded-md object-contain" />
+                        <img 
+                            src={item?.image} 
+                            className="lg:w-80 lg:h-[25rem] w-52 rounded-md object-contain" 
+                        />
                     </div>
+
                     <div className="lg:mt-10 lg:w-[28rem]">
-                        <div className="font-semibold text-xl text-gray-600">{item?.name}</div>
-                        <Rating value={calculateAverageRating(item?.id as number)} className="mt-2" />
+                        <div className="font-semibold text-xl text-gray-600">
+                            {item?.name}
+                        </div>
+
+                        <Rating 
+                            value={calculateAverageRating(item?.id as number)} 
+                            className="mt-2"
+                        />
                         <span className="absolute mt-2 ml-2">
-                            {(!handleRatingCarousel(item?.id as number) || handleRatingCarousel(item?.id as number) <= 0) ? <>
+                            {(!handleRatingCarousel(item?.id as number) || handleRatingCarousel(item?.id as number) <= 0) ?
+                             <>
                                 <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
                                     {handleRatingCarousel(item?.id as number)} sem avaliações
                                 </a>
-                            </> : handleRatingCarousel(item?.id as number) === 1 ? <>
+                            </> : handleRatingCarousel(item?.id as number) === 1 ?
+                             <>
                                 <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
                                     {handleRatingCarousel(item?.id as number)} avaliação
                                 </a>
-                            </> : <>
+                            </> :
+                             <>
                                 <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
                                     {handleRatingCarousel(item?.id as number)} avaliações
                                 </a>
@@ -75,11 +87,15 @@ const InfoProduct = () => {
                                 onClick={handleToggleFavorite}
                             />
                         </span>
-                        <p className="hidden lg:block mt-2">{item?.description} <span className="underline ml-2 cursor-pointer">ver mais</span></p>
+                        <p className="hidden lg:block mt-2">
+                            {item?.description} 
+                            <span className="underline ml-2 cursor-pointer">
+                                ver mais
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

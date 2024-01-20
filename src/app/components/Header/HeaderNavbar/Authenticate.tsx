@@ -18,45 +18,22 @@ export const UserIcon = () => {
                 text-4xl 
                 md:right-[130px] 
                 xl:right-[470px] 
-                cursor-pointer
-            "
+                cursor-pointer"
         >
             {session ? (
-                <div
-                    className="
-                        group 
-                        flex 
-                        absolute
-                        "
-                >
-                    <p
-                        className="
-                            text-4xl
-                            "
-                    >
+                <div className="group flex absolute">
+                    <p className="text-4xl">
                         <CiUser />
                     </p>
 
-                    <div
-                        className="
-                            pl-1 
-                            text-white
-                            "
-                    >
-                        <p
-                            className="
-                                text-base"
-                        >
+                    <div className="pl-1 text-white">
+                        <p className="text-base">
                             Olá,{`${session.user?.name?.split(' ')[0]}`}
                         </p>
 
-                        <p
-                            className="
-                                text-xs"
-                        >
+                        <p className="text-xs">
                             acesse sua conta
                         </p>
-
                     </div>
 
                     <div
@@ -138,22 +115,11 @@ export const UserIcon = () => {
                 <div className="flex">
                     <button
                         onClick={() => router.push("/login")}
-                        className="
-                            hidden 
-                            lg:flex 
-                            absolute
-                            "
+                        className="hidden lg:flex absolute"
                     >
                         <CiUser />
                         <p>
-                            <span
-                                className="
-                                    text-sm 
-                                    flex 
-                                    w-32 
-                                    text-white
-                                    "
-                            >
+                            <span className="text-sm flex w-32 text-white">
                                 Olá, faça seu login ou cadastre-se
                             </span>
                         </p>

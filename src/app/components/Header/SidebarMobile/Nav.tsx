@@ -4,12 +4,7 @@ import { signOut } from "next-auth/react";
 export const Nav = (props: any) => {
     const { view } = props;
     return (
-        <div className="
-            flex 
-            absolute 
-            z-10
-            "
-        >
+        <div className="flex absolute z-10">
             <ul 
                 className={`
                     lg:hidden 

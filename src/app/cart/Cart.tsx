@@ -54,54 +54,24 @@ export const Cart = () => {
   if (!cartProducts || cartProducts.length === 0 && session) {
     return (
       <div
-        className="
-          flex 
-          flex-col 
-          lg:py-52 
-          lg:ml-[18rem] 
-          rounded-2xl 
-          shadow-md 
-          shadow-slate-400 
-          mt-10 
-          p-4 
-          items-center"
+        className="flex flex-col rounded-2xl shadow-md shadow-slate-400 mt-10 p-4 items-center 
+        lg:py-52 lg:ml-[18rem]"
       >
-
         <div>
-          <div
-            className="
-              text-3xl 
-              text-purple-600 
-              font-semibold"
-          >
+          <div className="text-3xl text-purple-600 font-semibold">
             Seu carrinho está vazio
           </div>
 
           <Link
             href={"/"}
-            className="
-                text-slate-600 
-                  flex 
-                  flex-col 
-                  items-center 
-                  mt-2 
-                  justify-center"
+            className="text-slate-600 flex flex-col items-center mt-2 justify-center"
           >
             <span
-              className="
-                  text-[15px]"
-            >
+              className="text-[15px]">
               Você ainda não possui itens no seu carrinho.
             </span>
 
-            <button
-              className="
-                  bg-purple-600 
-                    text-white 
-                    rounded-lg 
-                    p-3 
-                    mt-8"
-            >
+            <button className="bg-purple-600 text-white rounded-lg p-3 mt-8">
               Inicie suas compras
             </button>
           </Link>
@@ -114,131 +84,54 @@ export const Cart = () => {
   if (session?.user) {
     return (
       <div>
-        <div
-          className="
-            lg:py-10 
-            lg:ml-[6.5rem] 
-            rounded-2xl 
-            shadow-md 
-          shadow-slate-400 
-            mt-64 
-            lg:mt-10 
-            lg:p-4 
-            lg:w-[65%]"
+        <div className="rounded-2xl shadow-md shadow-slate-400 mt-64
+             lg:py-10 lg:ml-[6.5rem] lg:p-4 lg:w-[65%] lg:mt-10"
         >
-
-          <h1
-            className="
-              text-2xl 
-              m-5 
-              lg:m-0 
-              lg:text-3xl 
-            text-gray-700 
-              text-start 
-              font-bold"
-          >
+          <h1 className="text-2xl m-5 lg:m-0 lg:text-3xl text-gray-700 text-start font-bold">
             Carrinho de Compras
           </h1>
 
-          <div
-            className="
-              hidden 
-              lg:flex 
-              justify-end 
-              font-semibold 
-              mr-11"
-          >
+          <div className="hidden lg:flex justify-end font-semibold mr-11">
             Preço
           </div>
 
-          <div
-            className="
-              mt-3"
-          >
+          <div className="mt-3">
             {cartProducts.map(item => (
-              <div
-                className="
-                  flex 
-                  flex-col 
-                  lg:flex-row 
-                  lg:justify-between 
-                  border 
-                  rounded-md 
-                  py-4 
-                  lg:p-8"
+              <div className="flex flex-col border rounded-md py-4 
+                   lg:p-8 lg:flex-row lg:justify-between"
               >
-                <div
-                  className="
-                    flex 
-                    gap-3"
-                >
+                <div className="flex gap-3">
                   <Link
                     href={`/products/${item.id}`}
                   >
                     <img
                       src={item.image}
-                      className="
-                        w-24 
-                        ml-2 
-                        object-contain"
+                      className="w-24 ml-2 object-contain"
                     />
                   </Link>
 
-                  <div
-                    className="
-                      flex 
-                      flex-col"
-                  >
-                    <span
-                      className="
-                        text-base 
-                        font-medium"
-                    >
+                  <div className="flex flex-col">
+                    <span className="text-base font-medium">
                       {item.name}
                     </span>
 
-                    <div
-                      className="
-                        text-xs 
-                        mt-3"
-                    >
+                    <div className="text-xs mt-3">
                       vendido e entregue por
                       <span
-                        className="
-                            underline"
-                      >
+                        className="underline">
                         flipmark
                       </span>
                     </div>
 
-                    <div 
-                      className="
-                        flex 
-                        mt-5"
-                    >
+                    <div className="flex mt-5">
                       Quantidade:
-                      <div 
-                        id='accordion-item' 
-                        className="
-                          flex 
-                          justify-center 
-                          ml-14"
+                      <div
+                        id='accordion-item'
+                        className="flex justify-center ml-14"
                       >
 
-                        <div 
-                          className="
-                            relative 
-                            text-center 
-                            border-2 
-                            h-8 
-                            w-12"
-                        >
-
-                          <p 
-                            className="
-                              mx-auto 
-                              font-medium"
-                          >
+                        <div className="relative text-center border-2 h-8 w-12">
+                          <p className="mx-auto font-medium">
                             {productQuantities[item.id] || 1}
                           </p>
                         </div>
@@ -256,8 +149,7 @@ export const Cart = () => {
                             shadow-slate-400 
                             mr-[90px] 
                             flex 
-                            justify-center"
-                        >
+                            justify-center">
                           -
                         </button>
 
@@ -274,8 +166,7 @@ export const Cart = () => {
                             shadow-slate-400 
                             ml-[90px] 
                             flex 
-                            justify-center"
-                        >
+                            justify-center">
                           +
                         </button>
                       </div>
@@ -283,11 +174,7 @@ export const Cart = () => {
 
                     <button
                       onClick={() => handleDeleteProductCart(item.id)}
-                      className="
-                        text-xl 
-                        mt-4 
-                        w-5 
-                        text-red-600"
+                      className="text-xl mt-4 w-5 text-red-600"
                     >
                       <RiDeleteBinLine />
                     </button>
@@ -312,22 +199,15 @@ export const Cart = () => {
                   {formatNumber(item.price < 200 ?
                     item.price * productQuantities[item.id] || item.price :
                     item.price * discont * productQuantities[item.id] || item.price * discont)}
-                  <div 
-                    className="
-                      hidden 
-                      lg:flex 
-                      text-base 
-                      text-gray-600 
-                      font-normal 
-                      mt-5"
-                  >
-                    à vista no Pix e boleto ou em até 6x de 
+
+                  <div className="hidden lg:flex text-base text-gray-600 font-normal mt-5">
+                    à vista no Pix e boleto ou em até 6x de
                     {`${(item?.price as number / 6 * productQuantities[item.id] || item.price / 6).toFixed(2).replace(".", ",")}`}
                     sem juros
                   </div>
                 </span>
 
-                <div 
+                <div
                   className="
                     mt-8 
                     lg:mt-0 
@@ -339,60 +219,28 @@ export const Cart = () => {
                     lg:top-64 
                     lg:right-20"
                 >
-                  <div 
-                    className="
-                      lg:py-5 
-                      rounded-2xl 
-                      lg:shadow-md 
-                      shadow-slate-400 
-                      lg:p-10"
+                  <div
+                    className="lg:py-5 rounded-2xl lg:shadow-md shadow-slate-400 lg:p-10"
                   >
-                    <div 
-                      className="
-                        flex 
-                        flex-col 
-                        gap-5 
-                        lg:mt-0"
-                    >             
-                      {subtotal > 150 ?                   
-                      <>
-                        <span 
-                          className="
-                            text-base 
-                            mb-2 
-                            flex 
-                            gap-2"
-                        >
-
-                          <span 
-                            className="
-                            text-green-600 
-                              text-xl 
-                              mt-[2px]"
-                          >
-                            <MdCheckCircle />
+                    <div className="flex flex-col gap-5 lg:mt-0">
+                      {subtotal > 150 ?
+                        <>
+                          <span className="text-base mb-2 flex gap-2">
+                            <span className="text-green-600 text-xl mt-[2px]">
+                              <MdCheckCircle />
+                            </span>
+                            Este produto se qualifica como frete grátis!
                           </span>
 
-                          Este produto se qualifica como frete grátis!
-
-                        </span>
-                        <span 
-                          className="
-                            text-gray-800 
-                              text-xl"
-                        >
-                          Subtotal: ({cartProducts?.length} Produtos):
-                          <span 
-                            className="
-                              font-bold 
-                              text-black"
-                          >
-                            {item.price > 200 ? formatNumber(subtotal * discont) : formatNumber(subtotal)}
+                          <span className="text-gray-800 text-xl">
+                            Subtotal: ({cartProducts?.length} Produtos):
+                            <span className="font-bold text-black">
+                              {item.price > 200 ? formatNumber(subtotal * discont) : formatNumber(subtotal)}
+                            </span>
                           </span>
-                        </span>
 
-                        <button
-                          className="
+                          <button
+                            className="
                             border-2 
                           text-white 
                           bg-purple-600 
@@ -401,41 +249,28 @@ export const Cart = () => {
                             cursor-pointer 
                             w-screen 
                             lg:w-[50%]"
-                        >
-                          Fechar Pedido
-                        </button>
-                        
-                        <hr 
-                          className="
-                            lg:hidden 
-                            xl:hidden 
-                            2xl:hidden 
-                            3xl:hidden 
-                            border-[1.5px] 
-                            mt-5"
-                        />
+                          >
+                            Fechar Pedido
+                          </button>
 
-                      </> :                    
-                      <>
-                        <span 
-                          className="
-                          text-gray-800 
-                            text-xl"
-                        >
-                          {/* Quantidade de produtos*/}
-                          Subtotal: ({cartProducts?.length} Produtos):
-                          <span 
-                            className="
-                              font-bold 
-                              text-black"
-                              >
-                                {/* Subtotal do valor de todos produtos. */}
-                                {formatNumber(subtotal)}
+                          <hr
+                            className="lg:hidden xl:hidden 2xl:hidden 3xl:hidden border-[1.5px] mt-5"
+                          />
+
+                        </> :
+                        <>
+                          <span className="text-gray-800 text-xl">
+                            {/* Quantidade de produtos*/}
+                            Subtotal: ({cartProducts?.length} Produtos):
+
+                              {/* Subtotal do valor de todos produtos. */}
+                            <span className="font-bold text-black">
+                              {formatNumber(subtotal)}
+                            </span>
                           </span>
-                        </span>
 
-                        <button
-                          className="
+                          <button
+                            className="
                             border-2 
                             text-white 
                             bg-purple-600 
@@ -444,34 +279,15 @@ export const Cart = () => {
                             cursor-pointer 
                             w-[50%] 
                             hover:opacity-60"
-                        >
-                          Fechar Pedido
-                        </button>
-                      </>}
+                          >
+                            Fechar Pedido
+                          </button>
+                        </>}
                     </div>
                   </div>
                 </div>
               </div>
             ))}
-          </div>
-
-          <div 
-            className=" 
-              border-slate-200 
-                py-4 
-                flex 
-                justify-between 
-                gap-4"
-          >
-            <div 
-              className="
-                text-sm 
-                flex 
-                flex-col 
-                gap-1 
-                items-start"
-            >
-            </div>
           </div>
         </div>
       </div>
@@ -480,7 +296,7 @@ export const Cart = () => {
     //Caso o usuário não esteja logado.
   } else {
     return (
-      <div 
+      <div
         className="
           flex 
           flex-col 
@@ -495,19 +311,12 @@ export const Cart = () => {
           h-[533px] 
           p-5"
       >
-        <h1
-          className="
-            text-2xl 
-            text-center 
-            text-gray-600 
-            font-medium"
-        >
+
+        <h1 className="text-2xl text-center text-gray-600 font-medium">
           Parece que você não está logado, faça o login para acessar seu carrinho.
         </h1>
-        <div 
-          className="
-            mt-10"
-        >
+
+        <div className="mt-10">
           <button
             onClick={() => router.push("/login")}
             className="

@@ -19,7 +19,11 @@ const AccordionDatasheet = () => {
         className="flex justify-between items-center cursor-pointer py-5"
         onClick={toggleAccordion}
       >
-        <h2 className="text-lg font-semibold">Informações do produto</h2>
+
+        <h2 className="text-lg font-semibold">
+          Informações do produto
+        </h2>
+
         <svg
           className={`w-6 h-6 ${isOpen ? 'transform rotate-180' : ''}`}
           fill="none"
@@ -32,12 +36,16 @@ const AccordionDatasheet = () => {
             strokeLinejoin="round"
             strokeWidth="2"
             d="M19 9l-7 7-7-7"
-          ></path>
+          >
+          </path>
         </svg>
       </div>
+
       {isOpen && (
         <div className="mt-4">
-          <p className="text-gray-600">{item ? item.description : "Desculpe, não encontramos informação nenhuma!"}</p>
+          <p className="text-gray-600">
+            {item ? item.description : "Desculpe, não encontramos informação nenhuma!"}
+          </p>
         </div>
       )}
     </div>
