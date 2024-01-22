@@ -67,7 +67,7 @@ const Carousel: React.FC = () => {
     return (
         <div className="md:w-[78%] xl:w-[67%] text-center mx-auto overflow-hidden rounded-xl">
             <div className="mx-auto px-5">
-                <h2 className="hidden lg:flex text-start text-2xl mb-10 font-bold text-gray-500">
+                <h2 className="hidden lg:flex text-start text-2xl lg:mb-10 font-bold text-gray-500">
                     Talvez Você goste disso
                 </h2>
                 <Slider {...settings}>
@@ -85,7 +85,7 @@ const Carousel: React.FC = () => {
                             />
 
                             <div className="flex flex-col justify-center lg:block">
-                                <p className="mt-3 lg:mt-10 lg:mb-3 truncate w-96">{item.name}</p>
+                                <p className="mt-3 lg:mt-10 lg:mb-3 truncate lg:w-96">{item.name}</p>
 
                                 <Rating 
                                     value={calculateAverageRating(item.id)} 

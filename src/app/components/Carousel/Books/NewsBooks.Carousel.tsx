@@ -127,12 +127,13 @@ const NewsBooks = () => {
 
                 <Rating
                   value={calculateAverageRating(item.id)}
+                  size="small"
                 />
 
-                <span className="absolute">
+                <span className="hidden lg:inline-block absolute lg:top-[19.5rem]">
                   {(!handleRatingCarousel(item.id) || handleRatingCarousel(item.id) <= 0) ?
                     <>
-                      <a className="text-xs ml-1 underline text-sky-700 cursor-pointer">
+                      <a className="text-sm  ml-1 underline text-sky-700 cursor-pointer">
                         {handleRatingCarousel(item.id)} sem avaliações
                       </a>
                       
@@ -140,12 +141,12 @@ const NewsBooks = () => {
                     handleRatingCarousel(item.id) === 1 ?
 
                       <>
-                        <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                        <a className='text-sm  ml-1 underline text-sky-700 cursor-pointer'>
                           {handleRatingCarousel(item.id)} avaliação
                         </a>
                     </> :
                       <>
-                        <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                        <a className='text-sm  ml-1 underline text-sky-700 cursor-pointer'>
                           {handleRatingCarousel(item.id)} avaliações
                         </a>
                     </>

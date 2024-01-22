@@ -15,11 +15,11 @@ type RatingContextType = {
   setRating: any;
   setTextAreaValue: any;
   itemRatings: { [key: number]: TaskList[] };
-  userHasCommented: any;
+  userHasCommented: boolean;
   setUserHasCommented: any;
-  inputValue: any;
+  inputValue: string;
   setInputValue: any;
-  inputBestInfo: any;
+  inputBestInfo: string;
   setInputBestInfo: any;
 }
 export const RatingContext = createContext<RatingContextType | null>(null);

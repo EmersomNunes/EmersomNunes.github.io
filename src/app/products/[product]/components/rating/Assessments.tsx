@@ -13,16 +13,16 @@ const Assessments = () => {
     const item = id !== null ? getItemById(id) : null;
 
     return (
-        <div className='w-[70%] mx-auto border h-[600px] p-8'>
-            <div className='grid grid-cols-[200px_minmax(100px,_1fr)] gap-10'>
-                <div className='ml-4'>        
+        <div className='lg:w-[70%] mt-10 lg:mt-0 lg:mx-auto border lg:h-[600px] lg:p-8'>
+            <div className='flex justify-start flex-col lg:grid lg:grid-cols-[200px_minmax(100px,_1fr)] gap-5 lg:gap-10'>
+                <div className='flex flex-col justify-center items-center lg:ml-4 lg:block'>        
                     <button
                         onClick={() => router.push(`/productassessment/${item?.id}`)}
-                        className='bg-purple-600 px-4 p-2 ml-6 rounded-lg text-white hover:opacity-95 mb-8'>
+                        className='bg-purple-600 px-4 p-2 lg:ml-6 rounded-lg text-white hover:opacity-95 mb-5 lg:mb-8'>
                         Fazer avaliação
                     </button>
 
-                    <div className='absolute w-48 h-48 p-5 shadow-md shadow-gray-400 rounded-lg'>
+                    <div className='lg:absolute lg:w-48 lg:h-48 p-5 shadow-md shadow-gray-400 rounded-lg'>
                         <div className="flex flex-col justify-center items-center gap-3">
                             <div className='text-xl text-gray-600'>
                                 Notas

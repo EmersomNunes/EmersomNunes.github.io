@@ -14,9 +14,9 @@ const AccordionDatasheet = () => {
   };
 
   return (
-    <div className="mt-4 p-4 shadow-md shadow-gray-400 rounded-lg w-[70%] mx-auto">
+    <div className="mt-4 p-4 shadow-md shadow-gray-400 rounded-lg lg:w-[70%] lg:mx-auto">
       <div
-        className="flex justify-between items-center cursor-pointer py-5"
+        className="flex justify-between items-center cursor-pointer lg:py-5"
         onClick={toggleAccordion}
       >
 

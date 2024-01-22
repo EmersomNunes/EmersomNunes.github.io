@@ -94,7 +94,7 @@ export const InputSearch = () => {
                             >
                                 <Link
                                     href={`/products/${product.id}`}
-                                    className="flex gap-2 bg-white rouded-lg px-1 hover:opacity-90 p-1"
+                                    className="flex gap-2 bg-white rouded-lg px-1 hover:opacity-80 p-1"
                                 >
                                     <img src={product.image} className="w-12 h-12 object-contain" />
                                     {product.name.split(' ').slice(0, 4).join(' ').toLowerCase()}

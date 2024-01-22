@@ -10,20 +10,17 @@ import Assessments from './components/rating/Assessments'
 
 const page = () => {
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <Header />
             <div className='lg:w-[70%] mx-auto lg:shadow-md lg:shadow-gray-500 lg:my-20 rounded-lg lg:flex'>
                 <InfoProduct />
                 <PaymentForm />
             </div>
             <div>
-                <div className='flex flex-col gap-14'>
                     <Carousel />
                     <CarouselOtherPeolplesBuyThis />
                     <AccordionDatasheet />
                     <Assessments />
-                </div>
-                
             </div>
             <Footer />
         </div>

@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer/Footer";
 
 const Page = () => {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <Header />
       <hr className="sm:block h-[1px] bg-gray-200 border-0 dark:bg-yellow-700"></hr>
       <div>

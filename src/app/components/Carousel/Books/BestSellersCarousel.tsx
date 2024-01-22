@@ -109,12 +109,16 @@ const BestSellersCarousel: React.FC = () => {
                   {item.name}
                 </p>
 
-                <Rating value={calculateAverageRating(item.id)}/>
+                <Rating 
+                  value={calculateAverageRating(item.id)} 
+                  className="text-sm" 
+                  size="small"
+                />
 
-                <span className="absolute">
+                <p className="hidden lg:inline-block absolute lg:top-[19.5rem]">
                   {(!handleRatingCarousel(item.id) || handleRatingCarousel(item.id) <= 0) ?
                     <>
-                      <a className="text-xs ml-1 underline text-sky-700 cursor-pointer">
+                      <a className="text-sm ml-1 underline text-sky-700 cursor-pointer">
                         {handleRatingCarousel(item.id)} sem avaliações
                       </a>
 
@@ -123,18 +127,18 @@ const BestSellersCarousel: React.FC = () => {
                     handleRatingCarousel(item.id) === 1 ?
 
                       <>
-                        <a className="text-xs ml-1 underline text-sky-700 cursor-pointer">
+                        <a className="text-sm ml-1 underline text-sky-700 cursor-pointer">
                           {handleRatingCarousel(item.id)} avaliação
                         </a>
 
                       </> :
 
                       <>
-                        <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>
+                        <a className='text-sm  ml-1 underline text-sky-700 cursor-pointer'>
                           {handleRatingCarousel(item.id)} avaliações
                         </a>
                       </>}
-                </span>
+                </p>
 
                 <p className="mt-3 lg:text-lg font-extrabold lg:mb-4">
                   {new Intl.NumberFormat('pt-BR', {

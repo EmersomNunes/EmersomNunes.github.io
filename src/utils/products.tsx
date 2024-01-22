@@ -1,14 +1,14 @@
 export const products = [
     {
         id: 1,
-        name: 'Pai Rico, Pai Pobre - Edição de 20 Anos Atualizada e Ampliada',
-        description: 'Celebrando 20 anos como o livro n° 1 em finanças pessoais. A escola prepara as crianças para o mundo real? Essa é a primeira pergunta com a qual o leitor se depara neste livro. O recado é ousado e direto: boa formação e notas altas ...',
+        name: 'CAFÉ COM DEUS PAI 2023',
+        description: 'Café com Deus Pai Porções diárias de renovação Com o passar das horas do dia, envoltos por tarefas dos mais diversos tipos, precisamos de pausas para renovar nossas forças e seguir adiante. Uma forma de aproveitar bem as pequenas pausas é tomando um bom café...',
         review: 4,
         price: 35.54,
         category: "livros",
         carouselCategory: "bestSellersCarousel",
         quantity: 1,
-        image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRXFWH8oRwmvaMPb-u7FbRlYLbgWRVko5Mru_ln2XKoERZIpsFmqsORskovInBoaTLafg2xa5aohwkQx6Hdi-Tqm_bVeHL_giu_YbfcSxPB&usqp=CAE"
+        image: "https://a-static.mlcdn.com.br/450x450/kit-biblia-com-devocional-nvi-capa-dura-mulher-virtuosa-cafe-com-deus-pai/livrariacristaemmerick/9761p/3df4e31b352b94d598e7d61770caf613.jpeg"
     },
     {
         id: 2,
@@ -140,7 +140,7 @@ export const products = [
         category: 'eletrodomesticos',
         carouselCategory: "HomeAppliences",
         quantity: 1,
-        image: 'https://img.freepik.com/fotos-premium/fogao-a-gas-sobre-o-fundo-branco_739536-3231.jpg'
+        image: 'https://venax.com.br/web/30981/15430136590.jpg'
     },
     {
         id: 14,
@@ -184,7 +184,7 @@ export const products = [
         category: 'eletrodomesticos',
         carouselCategory: "HomeAppliences",
         quantity: 1,
-        image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQhOSkRr8NMNQdoFECtjXffQkm2aVpL32DchlzpdqVgjSUHQ8W0NAVIKfzvlZUwyjDBjlKI-ofwI-4N_tm3EwkSqCKgfVQf82-5kWZO-CGtFlgUfqfLBeJF&usqp=CAE'
+        image: 'https://http2.mlstatic.com/D_NQ_NP_975843-MLB52371562850_112022-O.webp'
     },
     {
         id: 18,

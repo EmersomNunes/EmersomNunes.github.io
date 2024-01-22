@@ -25,26 +25,17 @@ const PaymentForm = () => {
                                 {formatNumber(item?.price as number)}
                             </sup>
 
-                            {formatNumber((item?.price as number) * (discont))}
-                            <span className='text-lg mb-2 font-semibold'>
-                                no pix
-                            </span>
-
-                            <p className='text-sm font-semibold text-gray-600 flex gap-2 w-96'>
-                                <FaCreditCard className="text-lg"/>
-                                {formatNumber(item?.price as number)} ou em até 6x de 
-                                {formatNumber(item?.price as number / 6)}
-                            </p>
-
                             <sup
                                 className='
-                                    absolute 
+                                    relative
+                                    lg:absolute 
                                     items-center 
-                                    text-sm 
+                                    text-sm
+                                    w-14
+                                    lg:w-auto
+                                    ml-24 
                                     rounded-lg 
                                     bg-green-500 
-                                    top-[35.8rem] 
-                                    ml-[6.5rem] 
                                     lg:top-[23.2rem] 
                                     px-[2px] 
                                     lg:ml-[7.8rem] 
@@ -53,6 +44,17 @@ const PaymentForm = () => {
                                 <i className="fa fa-arrow-down ml-1 mr-1"></i>
                                 3%
                             </sup>
+
+                            {formatNumber((item?.price as number) * (discont))}
+                            <span className='text-lg mb-2 font-semibold'>
+                                no pix
+                            </span>
+
+                            <p className='text-sm font-semibold text-gray-600 flex gap-2 lg:w-96'>
+                                <FaCreditCard className="text-lg"/>
+                                {formatNumber(item?.price as number)} ou em até 6x de 
+                                {formatNumber(item?.price as number / 6)}
+                            </p>
                         </div>
 
                         <ButtonAddToCart />

@@ -50,7 +50,7 @@ const InfoProduct = () => {
                     <div className="flex justify-center">
                         <img 
                             src={item?.image} 
-                            className="lg:w-80 lg:h-[25rem] w-52 rounded-md object-contain" 
+                            className="lg:w-80 lg:h-[25rem] rounded-md object-contain" 
                         />
                     </div>
 
@@ -63,7 +63,7 @@ const InfoProduct = () => {
                             value={calculateAverageRating(item?.id as number)} 
                             className="mt-2"
                         />
-                        <span className="absolute mt-2 ml-2">
+                        <span className="absolute mt-2 lg:ml-2">
                             {(!handleRatingCarousel(item?.id as number) || handleRatingCarousel(item?.id as number) <= 0) ?
                              <>
                                 <a className='text-xs ml-1 underline text-sky-700 cursor-pointer'>

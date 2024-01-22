@@ -75,7 +75,7 @@ const CarouselOtherPeolplesBuyThis: React.FC = () => {
                             <Link 
                                 key={item.id} 
                                 href={`/products/${item.id}`}
-                                className="cursor-pointer translate hover:scale-95 mt-5 lg:mt-0 mb-8 lg:mb-0">
+                                className="cursor-pointer translate hover:scale-95 lg:mt-0 lg:mb-0">
 
                                 <img 
                                     src={item.image} 
@@ -83,7 +83,7 @@ const CarouselOtherPeolplesBuyThis: React.FC = () => {
                                 />
 
                                 <div className="flex flex-col justify-center lg:block">
-                                    <p className="mt-3 lg:mt-10 lg:mb-3 truncate w-96">
+                                    <p className="mt-3 lg:mt-10 lg:mb-3 truncate lg:w-96">
                                         {item.name}
                                     </p>
 

@@ -27,7 +27,7 @@ export const ButtonMyItems = () => {
                         src="https://cdn-icons-png.flaticon.com/128/2716/2716443.png"
                         title="Favoritos"
                         className="
-                            w-6 
+                            w-10 
                             absolute
                             z-40 
                             right-[50px] 
@@ -86,7 +86,7 @@ export const ButtonMyItems = () => {
                             absolute
                             z-40 
                             text-sm 
-                            right-[0px] 
+                            right-[40px] 
                             top-[1.5px] 
                             lg:text-base 
                             lg:right-[185px] 
