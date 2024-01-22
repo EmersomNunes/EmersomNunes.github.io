@@ -25,7 +25,8 @@ export const CartShop = () => {
                         src="https://cdn-icons-png.flaticon.com/128/34/34568.png"
                         title="Carrinho"
                         className="w-6 
-                            absolute 
+                            absolute
+                            z-40 
                             right-[8px] 
                             top-[12px]
                             md:right-[25px] 
@@ -36,6 +37,7 @@ export const CartShop = () => {
                     <span
                         className="
                             absolute 
+                            z-40 
                             text-sm 
                             right-[0px] 
                             top-[1.5px] 
@@ -66,7 +68,8 @@ export const CartShop = () => {
                         title="Carrinho"
                         className="
                             w-6 
-                            absolute 
+                            absolute
+                            z-40 
                             right-[8px] 
                             top-[12px]
                             md:right-[25px] 
@@ -75,7 +78,8 @@ export const CartShop = () => {
                     />
                     <span
                         className="
-                            absolute 
+                            absolute
+                            z-40 
                             text-sm 
                             right-[0px] 
                             top-[1.5px] 

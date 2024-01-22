@@ -48,6 +48,11 @@ export const Cart = () => {
     }, 0);
   };
 
+  const handleCLoseOrder = () => {
+    alert("Compra bem sucedida!! (Lógica de pagamento em construção...)")
+    router.push("/")
+  }
+
   const subtotal = calculateSubtotal();
 
   //Caso o carrinho esteja vazio ou o usuário não esteja logado.
@@ -270,6 +275,7 @@ export const Cart = () => {
                           </span>
 
                           <button
+                            onClick={handleCLoseOrder}
                             className="
                             border-2 
                             text-white 

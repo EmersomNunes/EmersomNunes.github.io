@@ -5,7 +5,7 @@ export const Logo = () => {
 
     return(
         <button onClick={() => router.push("/")} 
-                className="flex absolute z-10 cursor-pointer" 
+                className="flex absolute z-40 cursor-pointer" 
                 title="Flipmark"
         >
             <span className="

@@ -15,6 +15,7 @@ export const UserIcon = () => {
                 hidden 
                 lg:block 
                 absolute 
+                z-40
                 text-4xl 
                 md:right-[130px] 
                 xl:right-[470px] 

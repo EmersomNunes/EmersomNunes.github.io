@@ -1,42 +1,109 @@
 "use client"
-import { useState } from "react";
+import { Product } from "@/types/Product";
+import { products } from "@/utils/products";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export const InputSearch = () => {
-    const [inputValue, setInputValue] = useState('');
+    const router = useRouter();
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState<Product[]>([]);
+    const inputRef = useRef<HTMLLIElement>(null);
+    const maxResults = 3;
+
+    const handleInputChange = (e: any) => {
+        const term = e.target.value;
+        setSearchTerm(term);
+
+        if (term === '') {
+            setSearchResults([]);
+            return;
+        }
+
+        const results = products.filter(product =>
+            product.name.toLowerCase().startsWith(term.toLowerCase())
+        );
+
+        setSearchResults(results.slice(0, maxResults));
+    };
+
+    const handleProductClick = (productId: number) => {
+        router.push(`/products/${productId}`);
+    };
+
+    
+  const handleClickOutside = (event: any) => {
+    if (inputRef.current && !inputRef.current.contains(event.target)) {
+      // Clique fora do componente, então limpe os resultados
+      setSearchResults([]);
+    }
+  };
+
+  useEffect(() => {
+    // Adiciona um ouvinte de eventos ao corpo do documento
+    document.addEventListener('click', handleClickOutside);
+
+    // Remove o ouvinte de eventos ao desmontar o componente
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
     return (
-        <div className="relative flex mt-14 items-center justify-center md:mt-1 w-full lg:w-7/12">
-            <input
-                type="text"
-                title="Pesquisar"
-                className="
+        <div className="w-full absolute z-10">
+            <div className="relative flex flex-col mt-14 items-center justify-center md:mt-1 w-full lg:w-5/12">
+                <input
+                    type="text"
+                    title="Pesquisar"
+                    className="
                     h-8 
                     w-11/12 
-                    rounded-xl 
                     placeholder:text-sm 
                     p-4 
-                    outline-none 
-                    outline-salmon
+                    outline-none
+                    shadow-sm
+                    shadow-gray-800
                     md:ml-36 
                     md:placeholder:text-base
-                    md:w-5/6
-                    xl:ml-52 
+                    md:w-6/6
+                    xl:ml-[26rem] 
                     xl:w-full 
-                    xl:h-10 
-                    xl:rounded-full"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Pesquisar..."
-            />
-            <div className="absolute right-2 md:right-4 xl:-right-[4px]">
-                <button className="p-1">
-                    <img src="https://cdn-icons-png.flaticon.com/128/5272/5272056.png" 
-                         className="w-6 m-1 mr-3"
-                    />
-                </button>
+                    xl:h-10"
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                    placeholder="Pesquisar..."
+                />
+                {searchResults.length > 0 && (
+                    <ul>
+                        {searchResults.map(product => (
+                            <li ref={inputRef}
+                                key={product.id}
+                                onClick={() => handleProductClick(product.id)}
+                                className="
+                                    flex
+                                    bg-white
+                                    shadow-sm
+                                    shadow-gray-600
+                                    px-3
+                                    pt-3
+                                    w-[22.6rem]
+                                    lg:w-[555px]
+                                    lg:ml-[25.9rem]
+                                    p-2"
+                            >
+                                <Link
+                                    href={`/products/${product.id}`}
+                                    className="flex gap-2 bg-white rouded-lg px-1 hover:opacity-90 p-1"
+                                >
+                                    <img src={product.image} className="w-12 h-12 object-contain" />
+                                    {product.name.split(' ').slice(0, 4).join(' ').toLowerCase()}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
         </div>
     );
 };
-
-

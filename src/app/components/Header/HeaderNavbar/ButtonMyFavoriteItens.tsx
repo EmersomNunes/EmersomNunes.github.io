@@ -28,7 +28,8 @@ export const ButtonMyItems = () => {
                         title="Favoritos"
                         className="
                             w-6 
-                            absolute 
+                            absolute
+                            z-40 
                             right-[50px] 
                             md:right-[85px] 
                             md:w-9
@@ -38,7 +39,8 @@ export const ButtonMyItems = () => {
 
                     <span 
                         className="
-                            absolute 
+                            absolute
+                            z-40 
                             text-xs 
                             right-[40px] 
                             top-[1.5px] 
@@ -71,6 +73,7 @@ export const ButtonMyItems = () => {
                         className="
                             w-6 
                             absolute 
+                            z-40 
                             right-[50px] 
                             md:right-[85px] 
                             md:w-9
@@ -80,7 +83,8 @@ export const ButtonMyItems = () => {
 
                     <span 
                         className="
-                            absolute 
+                            absolute
+                            z-40 
                             text-sm 
                             right-[0px] 
                             top-[1.5px] 

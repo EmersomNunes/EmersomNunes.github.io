@@ -12,6 +12,20 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Flipmark',
   description: 'Ecommerce App',
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: 'https://cdn-icons-png.flaticon.com/128/9203/9203620.png',
+        href: 'https://cdn-icons-png.flaticon.com/128/9203/9203620.png',
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: '/images/icon.png',
+        href: '/images/icon-dark.png',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -25,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 background: "rgb(51 65 85)",
                 color: '#fff'
               }
-            }} 
+            }}
             />
             <CartProvider>
               <RatingProvider>
@@ -37,45 +51,45 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </RatingProvider>
             </CartProvider>
 
-            <link 
-              rel="stylesheet" 
-              type="text/css" 
-              charSet="UTF-8" 
-              href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" 
-            />
-
-            <link 
-              rel="stylesheet" 
-              type="text/css" 
-              href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" 
+            <link
+              rel="stylesheet"
+              type="text/css"
+              charSet="UTF-8"
+              href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
             />
 
             <link
-                href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Dancing+Script&family=Prompt:wght@800&display=swap" 
-                rel="stylesheet">
+              rel="stylesheet"
+              type="text/css"
+              href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+            />
+
+            <link
+              href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Dancing+Script&family=Prompt:wght@800&display=swap"
+              rel="stylesheet">
             </link>
 
-            <link 
-              rel="preconnect" 
-              href="https://fonts.googleapis.com" 
+            <link
+              rel="preconnect"
+              href="https://fonts.googleapis.com"
             />
 
-            <link 
-              rel="preconnect" 
-              href="https://fonts.gstatic.com" 
-              crossOrigin='' 
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossOrigin=''
             />
             <link
-              href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@1,500&display=swap" 
+              href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@1,500&display=swap"
               rel="stylesheet"
             >
             </link>
 
-            <link 
-              rel="stylesheet" 
+            <link
+              rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             </link>
-            
+
             <script
               type="text/javascript"
               src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">

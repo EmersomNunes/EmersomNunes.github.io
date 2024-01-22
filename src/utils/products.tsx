@@ -1,7 +1,7 @@
 export const products = [
     {
         id: 1,
-        name: 'Livro - Pai Rico, Pai Pobre - Edição de 20 Anos Atualizada e Ampliada',
+        name: 'Pai Rico, Pai Pobre - Edição de 20 Anos Atualizada e Ampliada',
         description: 'Celebrando 20 anos como o livro n° 1 em finanças pessoais. A escola prepara as crianças para o mundo real? Essa é a primeira pergunta com a qual o leitor se depara neste livro. O recado é ousado e direto: boa formação e notas altas ...',
         review: 4,
         price: 35.54,
@@ -34,7 +34,7 @@ export const products = [
     },
     {
         id: 4,
-        name: 'É assim que começa (Vol. 2 É assim que acaba)',
+        name: 'E assim que começa (Vol. 2 É assim que acaba)',
         description: 'Preparem os corações. Lily e Atlas estão de volta na aguardada sequência de É assim que acaba. É assim que começa chega para consagrar novamente Colleen Hoover como a autora mais vendida do Brasil...',
         review: 4,
         price: 68.99,
@@ -133,7 +133,7 @@ export const products = [
     },
     {
         id: 13,
-        name: "Fogão 6 Bocas Acendimento Automático Bivolt Waves Itatiaia",
+        name: "Fogao 6 Bocas Acendimento Automático Bivolt Waves Itatiaia",
         description: 'Resistência e facilidade a favor da agilidade na cozinha. Cozimento mais rápido com durabilidade, queimadores em alumínio robustos, acendimento automático, pés altos e resistentes. Selo conpet de eficiência energética forno easyclean, luz no forno com lâmpada blindada e porta do forno com dobradiça multi estágio.',
         review: 4,
         price: 659.99,
@@ -155,7 +155,7 @@ export const products = [
     },
     {
         id: 15,
-        name: 'Panela Elétrica de Arroz PH5P Visor Glass Philco',
+        name: 'Panela Eletrica de Arroz PH5P Visor Glass Philco',
         description: 'A Panela Elétrica de Arroz PH5P Visor Glass é muito prática, conta com tigela com revestimento antiaderente e capacidade para 5 xícaras de arroz. A função Refogar/Cozinhar permite refogar alimentos antes de cozinhar. Prepare diversas receitas como: ensopados, sopas, legumes e muito mais.',
         review: 4,
         price: 179.99,
@@ -177,7 +177,7 @@ export const products = [
     },
     {
         id: 17,
-        name: 'Fritadeira Sem Óleo Air fryer eos Chef Gourmet 4 Litros Preto com Cinza EAF40S 110V',
+        name: 'Fritadeira Sem Oleo Air fryer eos Chef Gourmet 4 Litros Preto com Cinza EAF40S 110V',
         description: 'A Air Fryer eos 4 Litros é uma opção prática e eficiente para cozinhar. Com capacidade interna de 4 litros, é ideal para porções generosas. Possui tecnologia Turbo Twist AirFryer para um cozimento mais rápido, sistema antiaderente M...',
         review: 4,
         price: 330.86,
@@ -188,7 +188,7 @@ export const products = [
     },
     {
         id: 18,
-        name: 'Relógio Inteligente Smartwatch W34 S Preto Android Ios',
+        name: 'Relogio Inteligente Smartwatch W34 S Preto Android Ios',
         description: 'O Relógio Smartwatch Masculino e Feminino NFC S8 Ultra Pro Max é o acessório perfeito para quem busca estilo e funcionalidade. Com um design elegante e moderno, sua caixa em metal inoxidável na cor preto/cinza possui um tamanho de 49 mm, garantindo uma tela ampla de 49 mm para uma experiência visual incrível.',
         review: 4,
         price: 79.76,
@@ -221,7 +221,7 @@ export const products = [
     },
     {
         id: 21,
-        name: 'Relógio Casio Collection Masculino MTP-V006D-7BUDF',
+        name: 'Relogio Casio Collection Masculino MTP-V006D-7BUDF',
         description: 'Se você tem dificuldade em chegar no horário para trabalhar, costuma perder seus programas favoritos ou se atrasar para aquele encontro que você tanto aguardava, ou mesmo quer incrementar seu visual com um acessório, o ideal é ter um relógio, que além de deixar o seu dia a dia mais prático e pontual, também traz elegância no seu uso. O relógio MTP-V002D-1BUDF da Casio masculino é do tipo analógico, e para te deixar mais elegante ele vem com uma pulseira na cor prata',
         review: 4,
         price: 249.90,
@@ -243,7 +243,7 @@ export const products = [
     },
     {
         id: 23,
-        name: 'Lanterna táctica recarregável Genérica Xml T9 cor preto',
+        name: 'Lanterna tactica recarregável Genérica Xml T9 cor preto',
         description: 'Obtenha a lanterna ideal para todas as suas necessidades. Feita com materiais resistentes e de qualidade, ela se adapta a todas as situações em que você precise de uma boa iluminação.',
         review: 4,
         price: 83.50,
@@ -254,7 +254,7 @@ export const products = [
     },
     {
         id: 24,
-        name: 'Tênis Olympikus Feminino 146G Ultraleve/148 Corrida',
+        name: 'Tenis Olympikus Feminino 146G Ultraleve/148 Corrida',
         description: 'Supere seus limites para ir mais longe com o Tênis Olympikus 146G Ultraleve Feminino. Com um design moderno, o tênis running possui cabedal em formato de meia que oferece fácil calce e é extremamente leve e flexível, através da tecnologia HYPERSOX',
         review: 4,
         price: 130.54,

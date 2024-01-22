@@ -12,21 +12,22 @@ export const ItemsSpecify = () => {
         >
             <div
                 className="
-                grid 
+                hidden 
                 gap-x-12 
                 mx-3 
                 gap-4 
+                md:grid
                 grid-cols-3 
                 grid-rows-2
                 md:gap-x-28 
                 md:gap-y-8
                 xl:flex 
-                xl:gap-12
+                xl:gap-20
                 2xl:flex 
-                2xl:gap-x-20"
+                2xl:gap-x-40"
             >
                 <Link
-                    href="/books"
+                    href="/livros"
                     className="
                         bg-purple-600 
                         flex 
@@ -72,98 +73,7 @@ export const ItemsSpecify = () => {
                 </Link>
 
                 <Link
-                    href={'#'}
-                    className="
-                        bg-purple-600 
-                        flex 
-                        flex-col 
-                        rounded-full 
-                        p-3 
-                        items-center 
-                        md:p-3 
-                        lg:rounded-3xl 
-                        cursor-pointer 
-                        flex-grow
-                        shadow-lg 
-                        shadow-indigo-500/50
-                        hover:scale-110"
-                >
-                    <img
-                        src="https://static.vecteezy.com/ti/vetor-gratis/p3/9688054-vector-sinal-do-sofa-moveis-simbolo-esta-isolado-em-um-fundo-branco-icone-de-sofa-moveis-cor-editavel-gratis-vetor.jpg"
-                        className="
-                            w-16 
-                            h-16 
-                            rounded-[50%] 
-                            bg-purple-600
-                            md:w-20 
-                            md:h-20
-                            lg:w-32 
-                            lg:h-32"
-                    />
-                    <p
-                        className="
-                            hidden 
-                            xl:block
-                            font-serif 
-                            text-slate-600 
-                            md:text-black 
-                            md:ml-0 
-                            text-sm 
-                            md:text-lg 
-                            xl:text-xl 
-                            md:text-center 
-                            mt-2"
-                    >
-                        Móveis
-                    </p>
-                </Link>
-
-                <Link
-                    href={'#'}
-                    className="
-                        bg-purple-600 
-                        flex 
-                        flex-col 
-                        rounded-full 
-                        pt-3 items-center
-                        md:p-3 lg:rounded-3xl 
-                        cursor-pointer 
-                        flex-grow
-                        shadow-lg 
-                        shadow-indigo-500/50
-                        hover:scale-110"
-                >
-                    <img
-                        src="https://img.freepik.com/vetores-premium/modelo-de-vetor-de-icone-de-tela-de-televisao_917138-3403.jpg?size=626&ext=jpg"
-                        className="
-                            w-16 
-                            h-16 
-                            rounded-[50%] 
-                            bg-purple-600
-                            md:w-20 
-                            md:h-20
-                            lg:w-32 
-                            lg:h-32"
-                    />
-                    <p
-                        className="
-                            hidden 
-                            lg:block
-                            font-serif 
-                            text-slate-600 
-                            md:text-black 
-                            text-sm 
-                            md:text-lg 
-                            xl:text-xl 
-                            md:text-center 
-                            mt-2"
-                    >
-                        Áudio e vídeo
-                    </p>
-                </Link>
-
-                <Link
-                    href={'#'}
+                    href={'/eletrodomesticos'}
                     className="
                             bg-purple-600 
                             flex 
@@ -209,53 +119,7 @@ export const ItemsSpecify = () => {
                 </Link>
 
                 <Link
-                    href={'#'}
-                    className="
-                        bg-purple-600 
-                        flex 
-                        flex-col 
-                        rounded-full 
-                        pt-3 
-                        items-center 
-                        md:p-3 
-                        lg:rounded-3xl 
-                        cursor-pointer 
-                        flex-grow
-                        shadow-lg 
-                        shadow-indigo-500/50
-                        hover:scale-110"
-                >
-                    <img
-                        src="https://img.freepik.com/vetores-premium/icone-de-computador-portatil-em-estilo-simples-ilustracao-vetorial-de-notebook-em-fundo-branco-isolado-conceito-de-negocio-de-sinal-de-pc-portatil_157943-481.jpg"
-                        className="
-                            w-16 
-                            h-16 
-                            rounded-[50%] 
-                            bg-purple-600
-                            md:w-20 
-                            md:h-20
-                            lg:w-32 
-                            lg:h-32"
-                    />
-                    <p
-                        className="
-                            hidden 
-                            lg:block
-                            font-serif 
-                            text-slate-600 
-                            md:text-black 
-                            ml-1 text-sm 
-                            md:text-lg 
-                            xl:text-xl 
-                            md:text-center 
-                            mt-2"
-                    >
-                        Notbooks
-                    </p>
-                </Link>
-
-                <Link
-                    href={'#'}
+                    href={'/promocoes'}
                     className="
                         bg-purple-600 
                         flex 
@@ -295,7 +159,7 @@ export const ItemsSpecify = () => {
                             md:text-center 
                             mt-2"
                     >
-                        Smartphones
+                        Promoções
                     </p>
                 </Link>
             </div>

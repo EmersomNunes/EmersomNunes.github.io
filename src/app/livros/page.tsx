@@ -17,7 +17,7 @@ const page = () => {
             <Header />
             <div className='my-10 mx-52'>
                 <h1
-                    className='text-3x text-gray-600 font-semibold my-8'>
+                    className='text-3xl text-gray-600 font-semibold my-8'>
                     Todos os livros
                 </h1>
 

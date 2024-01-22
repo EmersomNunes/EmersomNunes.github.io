@@ -10,12 +10,11 @@ export const ButtonSupport = () => {
                 title="Suporte"
                 className="
                     hidden 
-                    md:absolute 
+                    md:absolute
                     md:right-[25px] 
                     md:w-9 
-                    md:hidden 
-                    xl:flex 
-                    2xl:flex
+                    md:flex
+                    z-40 
                     xl:right-[30px]
                     "
             />

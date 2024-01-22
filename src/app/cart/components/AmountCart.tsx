@@ -5,14 +5,8 @@ import { useState } from "react";
 
 export const AmountCart = () => {
   const pathname: string | null = usePathname();
-
-  const id: number | null = pathname !== null ?
-    parseInt(pathname.split('/').pop() || '', 10) || null :
-    null;
-
-  const item = id !== null ?
-    getItemById(id) :
-    null;
+  const id: number | null = pathname !== null ? parseInt(pathname.split('/').pop() || '', 10) || null : null;
+  const item = id !== null ? getItemById(id) : null;
 
   const [cartProduct,
     setCartProduct

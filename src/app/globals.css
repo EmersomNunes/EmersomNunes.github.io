@@ -44,7 +44,6 @@
 .slick-arrow.slick-next,
 .slick-arrow.slick-prev{
 position: absolute;
-z-index: 20;
 background-color: white;
 display: flex;
 align-items: center;
@@ -76,7 +75,7 @@ margin: 1px;
 
 .arrow {
 position: absolute;
-z-index: 40;
+z-index: 10;
 background-color: white;
 display: flex;
 align-items: center;
