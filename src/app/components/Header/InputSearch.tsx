@@ -66,7 +66,7 @@ export const InputSearch = () => {
                     shadow-gray-800
                     lg:placeholder:text-base
                     lg:w-6/6
-                    xl:ml-[26rem] 
+                    xl:ml-[31rem] 
                     xl:w-full 
                     xl:h-10"
                     value={searchTerm}
