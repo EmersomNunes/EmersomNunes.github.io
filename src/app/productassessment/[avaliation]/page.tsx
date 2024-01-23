@@ -8,7 +8,7 @@ import { useRating } from "@/hooks/useRating";
 import { Rating } from "@mui/material";
 import { useSession } from "next-auth/react";
 
-const productAssessment = () => {
+const ProductAssessment = () => {
     const {
         textAreaValue,
         setTextAreaValue,
@@ -212,4 +212,4 @@ const productAssessment = () => {
     }
 };
 
-export default productAssessment;
+export default ProductAssessment;

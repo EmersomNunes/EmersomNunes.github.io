@@ -7,7 +7,7 @@ import { useRating } from '@/hooks/useRating'
 import { Rating } from '@mui/material'
 import Link from 'next/link';
 
-const page = () => {
+const Page = () => {
     const { calculateAverageRating,
         handleRatingCarousel,
     } = useRating();
@@ -111,4 +111,4 @@ const page = () => {
     )
 }
 
-export default page;
+export default Page;

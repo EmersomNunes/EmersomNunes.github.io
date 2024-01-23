@@ -1,7 +1,7 @@
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
 import { Cart } from "./Cart";
-export const page = () => {
+export const Page: React.FC = () => {
     return (
         <div>
             <Header />
@@ -13,4 +13,4 @@ export const page = () => {
     );
 };
 
-export default page;
+export default Page;

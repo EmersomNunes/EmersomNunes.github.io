@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-const register = () => {
+const Register = () => {
   return (
     <div className='flex flex-col justify-center items-center'>
       <div className='w-[60%]'>
@@ -70,4 +70,4 @@ const register = () => {
   )
 }
 
-export default register
+export default Register

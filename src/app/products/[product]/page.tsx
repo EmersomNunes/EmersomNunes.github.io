@@ -8,7 +8,7 @@ import CarouselOtherPeolplesBuyThis from './components/carouselYouMightLike/Caro
 import AccordionDatasheet from './components/accordion/AccordionDatasheet'
 import Assessments from './components/rating/Assessments'
 
-const page = () => {
+const Page = () => {
     return (
         <div className='overflow-x-hidden'>
             <Header />
@@ -27,4 +27,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page;
