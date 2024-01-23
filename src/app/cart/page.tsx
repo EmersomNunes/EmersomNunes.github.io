@@ -1,7 +1,7 @@
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
 import { Cart } from "./Cart";
-export const PageCart = () => {
+export const page = () => {
     return (
         <div>
             <Header />
@@ -13,4 +13,4 @@ export const PageCart = () => {
     );
 };
 
-export default PageCart;
+export default page;
