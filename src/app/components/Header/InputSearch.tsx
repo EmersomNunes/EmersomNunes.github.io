@@ -35,16 +35,13 @@ export const InputSearch = () => {
     
   const handleClickOutside = (event: any) => {
     if (inputRef.current && !inputRef.current.contains(event.target)) {
-      // Clique fora do componente, então limpe os resultados
       setSearchResults([]);
     }
   };
 
   useEffect(() => {
-    // Adiciona um ouvinte de eventos ao corpo do documento
     document.addEventListener('click', handleClickOutside);
 
-    // Remove o ouvinte de eventos ao desmontar o componente
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
