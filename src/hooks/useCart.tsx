@@ -1,5 +1,6 @@
+import { getItemById } from "@/app/products/api";
 import { Product } from "@/types/Product";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { toast } from 'react-hot-toast';
 
@@ -9,6 +10,11 @@ type CartContextType = {
   handleAddProductCart: (product: Product) => void;
   handleDeleteProductCart: (productId: number) => void;
   handleCartQtyIncrease: (product: Product) => void;
+  productQuantities: any;
+  setProductQuantities: any;
+  handleQtyIncrease: (productId: number) => void;
+  handleQtyDecrease: (productId: number) => void;
+
 }
 export const CartContext = createContext<CartContextType | null>(null);
 
@@ -17,10 +23,20 @@ interface Props {
 };
 
 export const CartContextProvider = (props: Props) => {
-  const [cartQt, setCartTotal] = useState(0);
   const [cartProducts, setCartProducts] = useState<Product[] | null>(null);
-
+  const [productQuantities, setProductQuantities] = useState<{ [key: number]: number }>(() => {
+    const savedQuantities = localStorage.getItem('productQuantities');
+    return savedQuantities ? JSON.parse(savedQuantities) : {};
+  });
+  const [cartQt, setCartTotal] = useState(0);
   const router = useRouter();
+  const pathname: string | null = usePathname();
+  const id: number | null = pathname !== null ? parseInt(pathname.split('/').pop() || '', 10) || null : null;
+  const item = id !== null ? getItemById(id) : null;
+
+  useEffect(() => {
+    localStorage.setItem('productQuantities', JSON.stringify(productQuantities));
+  }, [productQuantities]);
 
   useEffect(() => {
     const cartItems: any = localStorage.getItem("eShopCartItens")
@@ -83,6 +99,22 @@ export const CartContextProvider = (props: Props) => {
       localStorage.setItem('eShopCartItems', JSON.stringify(updatedCart));
     }
   }, [cartProducts, setCartProducts]);
+  
+    //Lógica para diminuir item do carrinho.
+    const handleQtyDecrease = (productId: number) => {
+      setProductQuantities((prev) => {
+        const newQuantity = Math.max(prev[productId] - 1, 1);
+        return { ...prev, [productId]: newQuantity };
+      });
+    };
+  
+    //Lógica para aumentar item no carrinho.
+    const handleQtyIncrease = (productId: number) => {
+      setProductQuantities((prev) => {
+        const newQuantity = Math.min((prev[productId] || 1) + 1, 99);
+        return { ...prev, [productId]: newQuantity };
+      });
+    };
 
   const value = {
     cartQt,
@@ -90,7 +122,11 @@ export const CartContextProvider = (props: Props) => {
     handleAddProductCart,
     handleDeleteProductCart,
     handleCartQtyIncrease,
-    setCartTotal
+    setCartTotal,
+    productQuantities,
+    setProductQuantities,
+    handleQtyIncrease,
+    handleQtyDecrease
   };
 
   return <CartContext.Provider value={value} {...props} />

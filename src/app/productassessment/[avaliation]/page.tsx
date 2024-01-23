@@ -75,7 +75,7 @@ const productAssessment = () => {
                         shadow-md 
                         shadow-slate-400 
                         p-7 
-                        w-[68%] 
+                        lg:w-[68%] 
                         lg:h-[1020px]"
                 >
                     {!hasReviewed ? (<>
@@ -166,14 +166,14 @@ const productAssessment = () => {
                         </button>
 
                     </>) : (<>
-                        <div className="flex flex-col lg:py-52 rounded-2xl mt-10 p-4 items-center">
+                        <div className="flex flex-col lg:py-52 rounded-2xl lg:mt-10 lg:p-4 items-center">
                             <div>
                                 <div 
                                     className="
                                         text-4xl 
                                         text-purple-600 
                                         font-semibold 
-                                        ml-[17.5rem] 
+                                        lg:ml-[17.5rem] 
                                         mb-6"
                                 >
                                     Oooppss!

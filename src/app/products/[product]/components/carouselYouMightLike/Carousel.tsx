@@ -49,7 +49,7 @@ const Carousel: React.FC = () => {
             {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                 },
             } as ResponsiveObject,
             {
@@ -65,7 +65,7 @@ const Carousel: React.FC = () => {
     };
 
     return (
-        <div className="md:w-[78%] xl:w-[67%] text-center mx-auto overflow-hidden rounded-xl">
+        <div className="md:w-[90%] xl:w-[67%] text-center mx-auto overflow-hidden rounded-xl">
             <div className="mx-auto px-5">
                 <h2 className="hidden lg:flex text-start text-2xl lg:mb-10 font-bold text-gray-500">
                     Talvez Você goste disso
@@ -76,7 +76,7 @@ const Carousel: React.FC = () => {
                         <Link 
                             key={item.id} 
                             href={`/products/${item.id}`}
-                            className="cursor-pointer translate hover:scale-95 mt-5 lg:mt-0 mb-8 lg:mb-0"
+                            className="cursor-pointer translate hover:scale-95 mt-5 md:mt-16 lg:mt-0 mb-8 lg:mb-0"
                         >
 
                             <img 

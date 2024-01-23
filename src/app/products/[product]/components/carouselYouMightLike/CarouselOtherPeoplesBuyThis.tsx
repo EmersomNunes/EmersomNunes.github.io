@@ -48,7 +48,7 @@ const CarouselOtherPeolplesBuyThis: React.FC = () => {
             {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                 },
             } as ResponsiveObject,
             {
@@ -64,7 +64,7 @@ const CarouselOtherPeolplesBuyThis: React.FC = () => {
     };
 
     return (
-        <div className="md:w-[78%] xl:w-[67%] text-center mx-auto overflow-hidden rounded-xl">
+        <div className="md:w-[90%] xl:w-[67%] text-center mx-auto overflow-hidden rounded-xl">
             <div className="mx-auto px-5">
                 <h2 className="hidden lg:flex text-start text-2xl mb-10 font-bold text-gray-500">
                     Outras pessoas também compraram

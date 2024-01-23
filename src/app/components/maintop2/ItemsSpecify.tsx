@@ -20,7 +20,6 @@ export const ItemsSpecify = () => {
                 grid-cols-3 
                 grid-rows-2
                 md:gap-x-28 
-                md:gap-y-8
                 xl:flex 
                 xl:gap-20
                 2xl:flex 

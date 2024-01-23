@@ -11,9 +11,8 @@ export const Logo = () => {
             <span className="
                     hidden 
                     cursor-pointer 
-                    md:hidden 
-                    lg:flex 
-                    xl:flex 
+                    md:flex
+                    md:ml-8
                     2xl:flex
                     text-3xl 
                     font-extrabold 

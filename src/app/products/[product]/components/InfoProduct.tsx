@@ -50,7 +50,7 @@ const InfoProduct = () => {
                     <div className="flex justify-center">
                         <img 
                             src={item?.image} 
-                            className="lg:w-80 lg:h-[25rem] rounded-md object-contain" 
+                            className="w-48 h-48 md:w-80 md:h-[25rem] rounded-md object-contain" 
                         />
                     </div>
 
@@ -81,7 +81,7 @@ const InfoProduct = () => {
                                 </a>
                             </>}
                         </span>
-                        <span className="absolute top-[18%] ml-36 lg:ml-72 lg:top-[265px]">
+                        <span className="absolute top-[18%] ml-36 md:-ml-32 md:mt-10 lg:ml-72 lg:top-[265px]">
                             <Heart
                                 isClick={isFavoriteProduct}
                                 onClick={handleToggleFavorite}

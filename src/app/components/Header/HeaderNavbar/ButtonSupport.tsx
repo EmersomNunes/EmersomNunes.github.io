@@ -11,7 +11,8 @@ export const ButtonSupport = () => {
                 className="
                     hidden 
                     md:absolute
-                    md:right-[25px] 
+                    md:-right-[55px] 
+                    md:mt-[6px]
                     md:w-9 
                     md:flex
                     z-40 

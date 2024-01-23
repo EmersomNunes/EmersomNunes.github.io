@@ -52,7 +52,7 @@ export const InputSearch = () => {
 
     return (
         <div className="w-full absolute z-10">
-            <div className="relative flex flex-col mt-14 items-center justify-center md:mt-1 w-full lg:w-5/12">
+            <div className="relative flex flex-col mt-14 md:mt-20 items-center justify-center lg:mt-1 w-full lg:w-5/12">
                 <input
                     type="text"
                     title="Pesquisar"
@@ -64,9 +64,8 @@ export const InputSearch = () => {
                     outline-none
                     shadow-sm
                     shadow-gray-800
-                    md:ml-36 
-                    md:placeholder:text-base
-                    md:w-6/6
+                    lg:placeholder:text-base
+                    lg:w-6/6
                     xl:ml-[26rem] 
                     xl:w-full 
                     xl:h-10"

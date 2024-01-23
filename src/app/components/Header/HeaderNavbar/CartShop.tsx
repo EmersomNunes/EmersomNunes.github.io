@@ -27,9 +27,10 @@ export const CartShop = () => {
                         className="w-6 
                             absolute
                             z-40 
-                            right-[8px] 
+                            right-[8px]
+                            md:right-[15px]
+                            md:mt-[6px]
                             top-[12px]
-                            md:right-[25px] 
                             md:w-9
                             xl:right-[110px]
                             "

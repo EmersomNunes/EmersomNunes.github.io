@@ -17,9 +17,9 @@ const Page = () => {
         <Carousel />
         <ItemsSpecify />
 
-        <hr className="from-neutral-950 border-[1px] border-gray-500 mt-10 md:mb-10 md:w-9/12 mx-auto" />
+        <hr className="from-neutral-950 border-[1px] border-gray-500 md:mb-10 md:w-9/12 mx-auto" />
 
-        <div className="">
+        <div>
           <BestSellersCarousel />
           <NewsBooks />
         </div>

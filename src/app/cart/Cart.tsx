@@ -2,7 +2,7 @@
 import { useCart } from "@/hooks/useCart";
 import Link from "next/link";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdCheckCircle } from "react-icons/md";
 import { formatNumber } from "@/utils/formatNumber";
 import { useSession } from "next-auth/react";
@@ -11,34 +11,9 @@ import { useRouter } from "next/navigation";
 const discont = 1 - 0.03;
 
 export const Cart = () => {
-  const {
-    cartProducts,
-    handleDeleteProductCart
-  } = useCart();
-
-  const [
-    productQuantities,
-    setProductQuantities
-  ] = useState<{ [key: number]: number }>({});
-
-  const { data: session } = useSession();
+  const {cartProducts, handleDeleteProductCart, productQuantities, handleQtyDecrease, handleQtyIncrease} = useCart();
+  const {data: session} = useSession();
   const router = useRouter();
-
-  //Lógica para diminuir item do carrinho.
-  const handleQtyDecrease = (productId: number) => {
-    setProductQuantities((prev) => {
-      const newQuantity = Math.max(prev[productId] - 1, 1);
-      return { ...prev, [productId]: newQuantity };
-    });
-  };
-
-  //Lógica para aumentar item no carrinho.
-  const handleQtyIncrease = (productId: number) => {
-    setProductQuantities((prev) => {
-      const newQuantity = Math.min((prev[productId] || 1) + 1, 99);
-      return { ...prev, [productId]: newQuantity };
-    });
-  };
 
   //Logica para calcular valor total dos produtos.
   const calculateSubtotal = () => {
@@ -89,7 +64,7 @@ export const Cart = () => {
   if (session?.user) {
     return (
       <div>
-        <div className="rounded-2xl shadow-md shadow-slate-400 mt-64
+        <div className="rounded-2xl shadow-md shadow-slate-400 mt-56
              lg:py-10 lg:ml-[6.5rem] lg:p-4 lg:w-[65%] lg:mt-10"
         >
           <h1 className="text-2xl m-5 lg:m-0 lg:text-3xl text-gray-700 text-start font-bold">
@@ -121,11 +96,7 @@ export const Cart = () => {
                     </span>
 
                     <div className="text-xs mt-3">
-                      vendido e entregue por
-                      <span
-                        className="underline">
-                        flipmark
-                      </span>
+                      vendido e entregue por flipmark
                     </div>
 
                     <div className="flex mt-5">
@@ -225,7 +196,7 @@ export const Cart = () => {
                     lg:right-20"
                 >
                   <div
-                    className="lg:py-5 rounded-2xl lg:shadow-md shadow-slate-400 lg:p-10"
+                    className="md:py-20 lg:py-5 rounded-2xl lg:shadow-md shadow-slate-400 lg:p-10"
                   >
                     <div className="flex flex-col gap-5 lg:mt-0">
                       {subtotal > 150 ?
@@ -245,6 +216,7 @@ export const Cart = () => {
                           </span>
 
                           <button
+                            onClick={handleCLoseOrder}
                             className="
                             border-2 
                           text-white 
@@ -257,18 +229,13 @@ export const Cart = () => {
                           >
                             Fechar Pedido
                           </button>
-
-                          <hr
-                            className="lg:hidden xl:hidden 2xl:hidden 3xl:hidden border-[1.5px] mt-5"
-                          />
-
                         </> :
                         <>
                           <span className="text-gray-800 text-xl">
                             {/* Quantidade de produtos*/}
                             Subtotal: ({cartProducts?.length} Produtos):
 
-                              {/* Subtotal do valor de todos produtos. */}
+                            {/* Subtotal do valor de todos produtos. */}
                             <span className="font-bold text-black">
                               {formatNumber(subtotal)}
                             </span>

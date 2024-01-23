@@ -13,8 +13,8 @@ const Assessments = () => {
     const item = id !== null ? getItemById(id) : null;
 
     return (
-        <div className='lg:w-[70%] mt-10 lg:mt-0 lg:mx-auto border lg:h-[600px] lg:p-8'>
-            <div className='flex justify-start flex-col lg:grid lg:grid-cols-[200px_minmax(100px,_1fr)] gap-5 lg:gap-10'>
+        <div className='lg:w-[70%] mt-10 lg:mt-0 lg:mx-auto border lg:h-[600px] md:p-8'>
+            <div className='flex justify-start flex-col md:grid md:grid-cols-[200px_minmax(100px,_1fr)] gap-5 lg:gap-10'>
                 <div className='flex flex-col justify-center items-center lg:ml-4 lg:block'>        
                     <button
                         onClick={() => router.push(`/productassessment/${item?.id}`)}

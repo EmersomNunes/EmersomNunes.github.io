@@ -13,11 +13,11 @@ export const UserIcon = () => {
         <div
             className="
                 hidden 
-                lg:block 
+                md:block 
                 absolute 
                 z-40
                 text-4xl 
-                md:right-[130px] 
+                md:right-[340px] 
                 xl:right-[470px] 
                 cursor-pointer"
         >

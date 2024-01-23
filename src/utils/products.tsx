@@ -1,7 +1,7 @@
 export const products = [
     {
         id: 1,
-        name: 'CAFÉ COM DEUS PAI 2023',
+        name: 'Café com Deus Pai',
         description: 'Café com Deus Pai Porções diárias de renovação Com o passar das horas do dia, envoltos por tarefas dos mais diversos tipos, precisamos de pausas para renovar nossas forças e seguir adiante. Uma forma de aproveitar bem as pequenas pausas é tomando um bom café...',
         review: 4,
         price: 35.54,

@@ -15,8 +15,8 @@ export const Header = () => {
       className="hidden md:flex absolute bg-white -top-3 w-full h-[5rem] justify-center items-center text-3xl text-red-600 font-bold">
         Ofetas de fim de ano, não percaaaa!!
       </div>
-    <div className="bg-purple-600 h-36 lg:mt-16 lg:h-28 lg:flex shadow-lg shadow-purple-500/50">
-      <div className="font-bold md:w-[78%] xl:w-[70%] mx-auto lg:mt-6">
+    <div className="bg-purple-600 h-36 md:mt-16 md:h-40 lg:h-28 lg:flex shadow-lg shadow-purple-500/50">
+      <div className="font-bold md:w-[78%] xl:w-[70%] mx-auto md:mt-6">
         <Menu />
         <div className="flex pt-3 items-start relative">
           <Logo />
